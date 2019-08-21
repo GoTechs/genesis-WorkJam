@@ -1,0 +1,22 @@
+{
+  "views": {
+    "limit": {
+      "customBootstrapClass": "col-md-12",
+      "elementType": "input",
+      "elementConfig": {
+        "label": "Limit Cash",
+        "type": "text",
+        "placeholder": "∞"
+      },
+
+      "validation": {
+        "required": true,
+        "isNumeric": true
+      },
+      "valid": false,
+      "touched": false,
+      "errorText": "your should have a numiric input",
+      "value": ""
+    }
+  }
+}

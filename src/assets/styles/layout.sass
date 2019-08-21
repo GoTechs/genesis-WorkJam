@@ -1,0 +1,214 @@
+\:root
+  --auth-background: #15151E
+  --button-enable: #E10600
+  --button-disable: #bf727a
+  --balance-background: #E10600
+  --link-color: #E10600
+  --icon-color: #E10600
+  --image-background-desktop: url("https://cng-event-pictures.s3.amazonaws.com/genesis/image-background-desktop1.png") 
+  --image-background-header-desktop: url("https://cng-event-pictures.s3.amazonaws.com/genesis/image-header-desktop1.png") 
+  --image-background-phone: url("https://cng-event-pictures.s3.amazonaws.com/genesis/image-mobile1.png") 
+  --image-background-header-phone: url("https://cng-event-pictures.s3.amazonaws.com/genesis/image-header-mobile1.png") 
+
+
+
+
+html, body, #root
+  margin: 0 
+  padding: 0 
+  height: 100%
+  font-family: $main-font-light
+  background-color: $home-background
+
+
+.form-container
+  margin: 20px auto
+  width: 100%
+  margin-bottom: 50px
+  width: 450px
+  
+  input
+    width: 100%
+
+
+h1
+  font-family: $main-font-regular
+  font-size: 35px
+  margin-top: 30px
+  margin-bottom: 20px
+  &#grey
+   color: $primary-color4
+   
+p 
+  font-family: $main-font-regular
+  font-size: 15px
+  &#grey
+   color: $primary-color4
+h2
+  font-family: $main-font-bold
+  font-size: 20px
+  margin-top: 20px
+  margin-bottom: 10px
+  &#grey
+   color: $primary-color4
+   padding: 10px
+h3
+  font-family: $main-font-regular
+  font-size: 15px
+  margin-top: 10px
+  margin-bottom: 10px
+  &#grey
+   color: $primary-color4
+h5
+  font-family: $main-font-bold
+  font-size: 10px
+  margin-top: 10px
+  margin-bottom: 10px
+  &#grey
+   color: $primary-color4
+h6
+  font-family: $main-font-regular
+  font-size: 10px
+  margin-top: 10px
+  margin-bottom: 10px
+  &#grey
+   color: $primary-color4
+a
+  font-family: $main-font-regular 
+  font-size: 15px
+  &#grey
+   color: $primary-color4
+label
+  &#grey
+   color: $primary-color4
+.link-list
+ display: flex
+ float: right;
+ a
+  color: $link-color
+
+img 
+ &.icon 
+  margin-right: 40px;
+  box-sizing: border-box
+  height: 16px
+  &.input
+   float: right
+   margin: -33px 10px
+   display: block
+   &.verification_code
+     margin: -32px 135px
+     max-width: 16px
+.header-description
+  p
+    text-align: center
+    fontFamily: $main-font-regular
+    font-size: 20px
+    margin-top: 20px
+    margin-bottom: 10px
+textarea
+ width: 100%
+ height: 100px
+ border: 1px solid $primary-color4
+ margin-top: 70px
+ border-radius: 5px
+
+iframe
+ height: auto
+ max-width: 100%
+
+.modal-content
+    input
+      border: 1px solid #000
+      
+.header-container
+ color: $background-white
+ 
+input[type=checkbox]
+  padding-left: 5px
+  padding-right: 5px
+  border-radius: 0
+  -webkit-appearance: button
+  border:  2px solid $button-enable
+  margin-top: 20px
+  margin-right: 5px
+  white-space: nowrap
+  overflow: hidden
+  width: 15px
+  height: 15px
+  &:checked
+    background: transparent url("../../assets/images/thick-check.png") no-repeat 
+    background-size: 14px
+  &:hover
+    box-shadow: 0px 0px 10px $primary-color2
+
+/* 
+ *##Device = Tablets, Ipads (portrait)
+ *##Screen = B/w 768px to 1024px
+
+@media (min-width: 768px) and (max-width: 1024px)
+  //CSS
+
+/* 
+ *##Device = Tablets, Ipads (landscape)
+ *##Screen = B/w 768px to 1024px
+
+@media (min-width: 768px) and (max-width: 1024px) and (orientation: landscape)
+  //CSS
+
+/* 
+ *##Device = Low Resolution Tablets, Mobiles (Landscape)
+ *##Screen = B/w 481px to 767px
+
+@media (min-width: 481px) and (max-width: 767px)
+  //CSS
+
+/* 
+ *##Device = Most of the Smartphones Mobiles (Portrait)
+ *##Screen = B/w 320px to 479px
+
+@media (min-width: 320px) and (max-width: 480px)
+ h1
+  font-size: 27px
+ h2
+  font-size: 15px
+ h3 
+  font-size: 10px
+ p
+  font-size: 15px
+  
+ label
+  font-size: 15px
+
+ .form-container
+  width: auto 
+ .row
+ 
+ img 
+  &.icon 
+   height: 15px
+   margin-right: 0
+   &.input
+    margin: -25px 8px
+ 
+ .postForm
+ &disable
+  padding-left: 15px
+ .header
+ display: block
+ .btn-modal-btns
+ display: flex
+ justify-content: space-around
+
+ .modal-btns
+  display: flex
+  justify-content: space-around
+ 
+ .personal-info
+   .row
+    margin-left: 0
+    margin-right: 0
+    
+
+
+

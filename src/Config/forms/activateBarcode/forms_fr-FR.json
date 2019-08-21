@@ -1,0 +1,23 @@
+{
+  "views": {
+    "barcode_number": {
+      "customBootstrapClass": "col-md-12",
+      "elementType": "input",
+      "elementConfig": {
+        "label": "Barcode Number*",
+        "type": "text",
+        "placeholder": "",
+        "information": true
+      },
+      "validation": {
+        "required": true,
+        "isNumeric": true
+      },
+      "valid": false,
+      "touched": false,
+      "errorText": "barcode number required",
+      "value": "",
+      "show": true
+    }
+  }
+}

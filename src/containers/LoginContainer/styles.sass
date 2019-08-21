@@ -1,0 +1,47 @@
+@import '../../assets/styles/global.sass'
+
+
+.login-page
+  -webkit-background-size: cover
+  -moz-background-size: cover
+  -o-background-size: cover
+  background-size: cover
+  top: 0
+  left: 0
+  display: grid
+  justify-content: center
+  align-content: center
+  
+.login-container
+  background: rgba(0,0,0,.2)
+  padding: 40px 
+
+.forget-password
+ color: $background-white
+ margin: 10px
+ width: 100%
+ text-align: end
+.header-link
+ display: block
+ margin: auto
+
+.header-link > a
+ color: $link-color
+ font-size: 15px
+ font-family: $main-font-regular
+
+#visibility_off
+ margin: -37px 10px
+ height: 25px
+#login-title
+ text-align: center
+
+@media (min-width: 320px) and (max-width: 480px)
+ #visibility_off
+  margin: -29px 8px
+  height: 22px
+
+
+ .login-container
+  background: none
+  padding: 0 15px 

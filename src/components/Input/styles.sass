@@ -1,0 +1,122 @@
+@import '../../assets/styles/global.sass'
+
+.Input
+  width: 100%
+  margin-bottom: 10px
+  svg
+   path
+    fill: $primary-color5
+textarea
+  border: 1px solid $input-border
+
+.react-phone-number-input__row,
+
+input,select
+  height: 50px
+  line-height: 50px
+  padding-left: 30px
+  border: 1px solid $input-border
+  border-radius: 6px
+  font-size: 20px
+  background-color: transparent
+  outline: none
+  width: 100%
+  display: block
+  transition: all 0.5s ease
+  color: $input-border
+.select-style
+  padding-left: 30px
+  border: 1px solid $input-border
+  border-radius: 8px
+  font-size: 15px
+  background-color: transparent
+  outline: none
+  width: 100%
+  display: block
+  transition: all 0.5s ease
+ 
+
+.react-phone-number-input__row
+  padding-left: 30px
+  display: flex
+
+.react-phone-number-input__input
+  border: 0px
+
+.react-phone-number-input__icon--international
+  padding-top: 0
+  position: relative
+  margin-top: -20px
+
+.react-phone-number-input__icon
+  position: relative
+  border: 0px
+  img
+    position: absolute
+
+.select-style
+  padding: 0
+  margin: 0
+  overflow: hidden
+  background: transparent url("../../assets/images/arrow_down.png") no-repeat 90% 50%
+  background-size: 30px auto
+  background-position-x: right
+  select
+    padding: 0px 8px
+    padding-left: 30px
+    width: 100%
+    border: none
+    box-shadow: none
+    background-color: transparent
+    background-image: none
+    -webkit-appearance: none
+    -moz-appearance: none
+    appearance: none
+    
+    &:focus
+      outline: none
+
+.Invalid
+  border: 1px solid red
+  background-color: transparent
+  border: 1px solid $input-border-error
+
+.checkbox-input
+ >label
+  width: 90%
+  float: right
+ 
+@media only screen and (max-width: 600px)
+  .react-phone-number-input__row,
+  
+  input
+    height: 35px
+    line-height: 35px
+    padding-left: 20px
+    font-size: 15px
+    transition: all 0.5s ease
+  .select-style
+    height: 35px
+    font-size: 15px
+    transition: all 0.5s ease 
+    select
+     padding-left: 30px
+     height: 100%
+     line-height: 1
+
+      
+  
+@media (min-width: 481px) and (max-width: 767px)
+  //CSS
+
+/* 
+ *##Device = Most of the Smartphones Mobiles (Portrait)
+ *##Screen = B/w 320px to 479px
+
+@media (min-width: 320px) and (max-width: 480px)
+ //CSS
+ .Input
+   svg
+    margin: -25px 8px !important
+     
+      

@@ -1,0 +1,22 @@
+{
+  "views": {
+    "amount_cash": {
+      "customBootstrapClass": "col-md-12",
+      "elementType": "input",
+      "elementConfig": {
+        "label": "Enter Amount*",
+        "type": "text",
+        "placeholder": ""
+      },
+
+      "validation": {
+        "required": true,
+        "isNumeric": true
+      },
+      "valid": false,
+      "touched": false,
+      "errorText": "cash amount required",
+      "value": ""
+    }
+  }
+}

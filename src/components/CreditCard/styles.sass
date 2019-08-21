@@ -1,0 +1,66 @@
+
+@import '../../assets/styles/global.sass'
+
+.wallet-container
+  .header-wallet
+  .top-wallet-container
+   display: grid
+   grid-template-rows: 1fr
+   grid-template-columns: 1fr 210px
+   width: 100% 
+   .add-cash
+    display: block
+    margin-left: 10px
+    .account-balance
+      background: $background-white
+      display: flex
+      flex-direction: column
+      align-items: center
+      .balance-number
+       h2
+        margin-top: 0
+       h1
+        margin-top: 0
+      h3
+       margin-top: 0
+   .card-list-container
+      width: 100%
+      .card
+        display: flex
+        flex-direction: row
+        align-items: center
+        border-bottom: 2px solid rgba(192, 192, 192, 0.2)
+        background: $background-white
+        height: 50px
+        border-radius: 0
+        margin: 0
+        .card-info
+          display: flex
+          flex-direction: row
+          align-items: center
+          justify-content: space-around
+          width: 100%
+      p
+       margin-top: 15px   
+          
+      .title-card
+        background: $background-white
+        border-bottom: 2px solid rgba(192, 192, 192, 0.2)
+        
+     
+        
+
+
+/* 
+ *##Device = Most of the Smartphones Mobiles (Portrait)
+ *##Screen = B/w 320px to 479px
+
+@media (min-width: 320px) and (max-width: 480px)
+ 
+ .wallet-container
+  .top-wallet-container
+    grid-template-columns: 1fr
+    .add-cash
+     margin: 0
+     .account-balance
+      width: 180px

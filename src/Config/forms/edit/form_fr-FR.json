@@ -1,0 +1,111 @@
+{
+  "views": {
+    "personnal_information": {
+      "customBootstrapClass": "col-md-12",
+      "elementType": "text",
+      "elementConfig": {
+        "inputClass": "",
+        "className": "h2_style",
+        "id": ""
+      },
+      "validation": {},
+      "valid": true,
+      "touched": true,
+      "value": "Personal Details",
+      "show": true
+    },
+    "first_name": {
+      "customBootstrapClass": "col-md-12",
+      "elementType": "input",
+      "elementConfig": {
+        "label": "First Name*",
+        "type": "text",
+        "placeholder": ""
+      },
+
+      "validation": {
+        "required": true
+      },
+      "valid": false,
+      "touched": false,
+      "errorText": "Your First Name is required",
+      "value": "",
+      "defaultValue": "",
+      "key": 1,
+      "show": true
+    },
+    "last_name": {
+      "customBootstrapClass": "col-md-12",
+      "elementType": "input",
+      "elementConfig": {
+        "label": "Last Name*",
+        "type": "text",
+        "placeholder": ""
+      },
+
+      "validation": {
+        "required": true
+      },
+      "valid": false,
+      "touched": false,
+      "errorText": "Your Last Name required",
+      "value": "",
+      "key": 2,
+      "show": true
+    },
+    "year": {
+      "customBootstrapClass": "col-md-12",
+      "elementType": "year",
+      "elementConfig": {
+        "label": "Birthdate*",
+        "inputClass": "birthdate_field",
+        "defaultValue": "Year",
+        "start": 1930,
+        "end": 2008
+      },
+      "value": "",
+      "validation": {
+        "required": true
+      },
+      "valid": false,
+      "touched": false,
+      "errorText": "Year required",
+      "show": true
+    },
+    "month": {
+      "customBootstrapClass": "col-md-12",
+      "elementType": "month",
+      "elementConfig": {
+        "label": " ",
+        "inputClass": "birthdate_field",
+        "defaultValue": "Month"
+      },
+      "caps": true,
+      "endYearGiven": true,
+      "value": "",
+      "validation": {
+        "required": true
+      },
+      "valid": false,
+      "touched": false,
+      "errorText": "Month required",
+      "show": true
+    },
+    "day": {
+      "customBootstrapClass": "col-md-12",
+      "elementType": "day",
+      "elementConfig": {
+        "inputClass": "birthdate_field",
+        "defaultValue": "Day"
+      },
+      "value": "",
+      "validation": {
+        "required": true
+      },
+      "valid": false,
+      "touched": false,
+      "errorText": "day required",
+      "show": true
+    }
+  }
+}

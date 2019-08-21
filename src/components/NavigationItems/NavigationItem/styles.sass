@@ -1,0 +1,33 @@
+@import '../../../assets/styles/global.sass'
+
+.NavigationItem
+  margin: 0px 0
+  box-sizing: border-box
+  display: block
+  width: 100%
+  a
+    color: #8f5c2c
+    text-decoration: none
+    line-height: 40px
+    width: 100%
+    box-sizing: border-box
+    display: block
+    border-bottom: 1px solid #000
+.NavigationItem a:hover,
+.NavigationItem a:active,
+.NavigationItem a.active
+  color: $sidebar-font-active-color
+  color: #FFF
+
+.DesktopOnly
+  .NavigationItem
+    a
+      margin: 0
+      padding: 0 10px
+      border: 0px
+      line-height: 50px
+      width: max-content
+      &:hover,
+      &:active,
+      &.active
+        border-bottom: 3px solid #000

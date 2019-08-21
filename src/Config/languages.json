@@ -1,0 +1,39 @@
+{
+  "internationalization": {
+    "switcherType": {
+      "toggleSwitcher": false,
+      "listSwitcher": true,
+      "default": "en-US"
+    },
+    "Languages": [
+      {
+        "key": "en-US",
+        "slug": "en",
+        "name": "En",
+        "shortname": "En",
+        "active": true
+      },
+      {
+        "key": "fr-FR",
+        "slug": "fr",
+        "name": "Fr",
+        "shortname": "Fr",
+        "active": true
+      },
+      {
+        "key": "fr_CA",
+        "slug": "fr_ca",
+        "name": "Canada French",
+        "shortname": "CA-fr",
+        "active": false
+      },
+      {
+        "key": "en_CA",
+        "slug": "en_ca",
+        "name": "tedst",
+        "shortname": "CA-en",
+        "active": false
+      }
+    ]
+  }
+}

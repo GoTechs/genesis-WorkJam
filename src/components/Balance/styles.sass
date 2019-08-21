@@ -1,0 +1,36 @@
+@import '../../assets/styles/global.sass'
+
+.balance
+    border: 1px solid $primary-color4
+    max-width: 265px
+    display: flex
+    flex-direction: row
+    text-align: center
+    margin-top: 30px
+    margin-bottom: 30px
+    height: 55px
+    background: $background-white
+.balance-title
+    margin: auto
+    padding: 12px
+.wristband-balance
+    flex-grow: 1;
+    background-color: $balance-background 
+    font-family: Arial
+    font-size: 30px
+    color: $primary-color4
+    h2
+      margin-top: 15px
+@media (min-width: 481px) and (max-width: 767px)
+  //CSS
+
+/* 
+ *##Device = Most of the Smartphones Mobiles (Portrait)
+ *##Screen = B/w 320px to 479px
+
+@media (min-width: 320px) and (max-width: 480px)
+  .balance
+   height: 35px
+  .wristband-balance
+    h2
+     margin-top: 10px

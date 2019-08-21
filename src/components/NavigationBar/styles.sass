@@ -1,0 +1,62 @@
+
+@import '../../assets/styles/global.sass'
+
+.navigation-bar
+  background: $image-background-header-desktop
+  -webkit-background-size: cover
+  -moz-background-size: cover
+  -o-background-size: cover 
+  background-size: cover
+  height: 175px
+  .sticky-top
+   margin: 0 205px 
+
+  
+.top-nav-bar
+  flex-direction: row-reverse
+  margin-right: 100px
+  .navbar-nav
+   .nav-link
+     color: $link-color
+     margin-right: 15px
+     &.active
+      color: $primary-color5  
+  .dropdown
+   .dropdown-toggle
+    margin-top: 10px
+    &::after
+        display: none
+        
+  a 
+   display: block
+   border-bottom: 4px solid  transparent
+   text-decoration: none 
+   &:hover 
+    border-bottom: 5px solid $balance-background
+   &.active
+     border-bottom: 5px solid $balance-background
+   &.nav-dropdown 
+     border-bottom: 5px solid transparent
+ 
+
+
+ 
+
+
+
+
+/* 
+ *##Device = Most of the Smartphones Mobiles (Portrait)
+ *##Screen = B/w 320px to 479px
+
+@media (min-width: 320px) and (max-width: 480px)
+  .navigation-bar
+    background:  $image-background-header-phone
+    -webkit-background-size: cover
+    -moz-background-size: cover
+    -o-background-size: cover 
+    background-size: cover
+    display: flex
+    .sticky-top
+     margin: 0 
+     width: 100% 

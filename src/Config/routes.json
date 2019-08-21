@@ -1,0 +1,75 @@
+{
+  "routes": {
+    "loginWithUserCredentials": [
+      {
+        "path": "/",
+        "component": "login",
+        "exact": true
+      },
+      {
+        "path": "/auth/login",
+        "component": "login"
+      },
+      {
+        "path": "/auth",
+        "component": "register",
+        "exact": true
+      },
+
+      {
+        "path": "/auth/forget-password",
+        "component": "forgetPassword"
+      },
+      {
+        "path": "/auth/reset-password/:id",
+        "component": "resetPassword"
+      },
+      {
+        "path": "/auth/activate-wristband",
+        "component": "wristbandAuth"
+      },
+      {
+        "path": "/home",
+        "component": "homePage"
+      },
+      {
+        "path": "/validate-email",
+        "component": "emailValidation",
+        "typeRoute": "private"
+      },
+      {
+        "path": "/home/loyalty-program",
+        "component": "loyaltyProgram"
+      },
+      {
+        "path": "/help",
+        "component": "help"
+      },
+
+      {
+        "path": "*",
+        "component": "notFoundPage"
+      }
+    ],
+
+    "workJim": [
+      {
+        "path": "/",
+        "component": "homePage",
+        "exact": true
+      },
+      {
+        "path": "/home",
+        "component": "homePage"
+      },
+      {
+        "path": "*",
+        "component": "displayMessage"
+      },
+      {
+        "path": "*",
+        "component": "notFoundPage"
+      }
+    ]
+  }
+}

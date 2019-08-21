@@ -1,0 +1,42 @@
+{
+  "views": {
+    "password": {
+      "customBootstrapClass": "col-md-12",
+      "elementType": "input",
+      "elementConfig": {
+        "inputClass": "",
+        "label": "Password",
+        "type": "password",
+        "placeholder": ""
+      },
+
+      "validation": {
+        "required": true,
+        "minLength": 5
+      },
+      "valid": false,
+      "touched": false,
+      "errorText": "passsword should have min 5 and max 8",
+      "value": ""
+    },
+    "confirmPassword": {
+      "customBootstrapClass": "col-md-12",
+      "elementType": "input",
+      "elementConfig": {
+        "inputClass": "",
+        "label": "Confirm password",
+        "type": "password",
+        "placeholder": ""
+      },
+
+      "validation": {
+        "required": true,
+        "isConfirm": true
+      },
+      "valid": false,
+      "touched": false,
+      "errorText": "password not match",
+      "value": ""
+    }
+  }
+}

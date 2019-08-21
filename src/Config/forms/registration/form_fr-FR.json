@@ -1,0 +1,476 @@
+{
+  "views": {
+    "personnal_information_title": {
+      "customBootstrapClass": "col-md-12",
+      "elementType": "text",
+      "elementConfig": {
+        "inputClass": "",
+        "className": "h2_style",
+        "id": ""
+      },
+      "validation": {},
+      "valid": true,
+      "touched": true,
+      "value": "Personal Information",
+      "show": true
+    },
+    "first_name": {
+      "customBootstrapClass": "col-md-12",
+      "elementType": "input",
+      "elementConfig": {
+        "label": "First Name*",
+        "inputClass": "",
+        "type": "text",
+        "placeholder": "Your first Name"
+      },
+      "validation": {
+        "required": true
+      },
+      "valid": false,
+      "touched": false,
+      "errorText": "Your First Name is required",
+      "value": "",
+      "key": 1,
+      "show": true
+    },
+    "last_name": {
+      "customBootstrapClass": "col-md-12",
+      "elementType": "input",
+      "elementConfig": {
+        "label": "Last Name*",
+        "inputClass": "",
+        "type": "text",
+        "placeholder": "Your Last Name"
+      },
+
+      "validation": {
+        "required": true
+      },
+      "valid": false,
+      "touched": false,
+      "errorText": "Your Last Name required",
+      "value": "",
+      "key": 2,
+      "show": true
+    },
+    "year": {
+      "customBootstrapClass": "col-md-12",
+      "elementType": "year",
+      "elementConfig": {
+        "label": "Birthdate*",
+        "inputClass": "birthdate_field",
+        "defaultValue": "Year",
+        "start": 1930,
+        "end": 2008
+      },
+      "value": "",
+      "validation": {
+        "required": true
+      },
+      "valid": false,
+      "touched": false,
+      "errorText": "Year required",
+      "show": true
+    },
+    "month": {
+      "customBootstrapClass": "col-md-12",
+      "elementType": "month",
+      "elementConfig": {
+        "label": " ",
+        "inputClass": "birthdate_field",
+        "defaultValue": "Month"
+      },
+      "caps": true,
+      "endYearGiven": true,
+      "value": "",
+      "validation": {
+        "required": true
+      },
+      "valid": false,
+      "touched": false,
+      "errorText": "Month required",
+      "show": true
+    },
+    "day": {
+      "customBootstrapClass": "col-md-12",
+      "elementType": "day",
+      "elementConfig": {
+        "inputClass": "birthdate_field",
+        "defaultValue": "Day"
+      },
+      "value": "",
+      "validation": {
+        "required": true
+      },
+      "valid": false,
+      "touched": false,
+      "errorText": "day required",
+      "show": true
+    },
+    "gender": {
+      "customBootstrapClass": "col-md-12",
+      "elementType": "select",
+      "inputClass": "",
+      "elementConfig": {
+        "label": "Gender",
+        "options": [
+          { "value": "", "displayValue": "Gender" },
+          { "value": "F", "displayValue": "Female" },
+          { "value": "M", "displayValue": "Male" }
+        ]
+      },
+      "validation": {},
+      "valid": true,
+      "value": "",
+      "key": 21,
+      "show": false
+    },
+    "account_information_title": {
+      "customBootstrapClass": "col-md-12",
+      "elementType": "text",
+      "elementConfig": {
+        "inputClass": "",
+        "className": "h2_style",
+        "id": ""
+      },
+      "validation": {},
+      "valid": true,
+      "touched": true,
+      "value": "Account information",
+      "show": true
+    },
+    "email": {
+      "customBootstrapClass": "col-md-12",
+      "elementType": "input",
+      "elementConfig": {
+        "label": "Email",
+        "type": "email",
+        "placeholder": "Your Email"
+      },
+      "validation": {
+        "required": true,
+        "isEmail": true
+      },
+      "valid": false,
+      "touched": false,
+      "errorText": "You have entered an Invalid email",
+      "value": "",
+      "key": 3,
+      "show": true
+    },
+    "password": {
+      "customBootstrapClass": "col-md-12",
+      "elementType": "input",
+      "elementConfig": {
+        "label": "Password",
+        "type": "password",
+        "placeholder": "Password"
+      },
+      "validation": {
+        "required": true,
+        "minLength": 8
+      },
+      "valid": false,
+      "touched": false,
+      "errorText": "passsword should have min 8 character",
+      "value": "",
+      "show": true
+    },
+    "confirmPassword": {
+      "customBootstrapClass": "col-md-12",
+      "elementType": "input",
+      "elementConfig": {
+        "label": "Confirm password",
+        "type": "password",
+        "placeholder": "Password"
+      },
+      "validation": {
+        "required": true,
+        "isConfirm": true
+      },
+      "valid": false,
+      "touched": false,
+      "errorText": "password not match",
+      "value": "",
+      "show": false
+    },
+    "contact_information_title": {
+      "customBootstrapClass": "col-md-12",
+      "elementType": "text",
+      "elementConfig": {
+        "className": "h2_style",
+        "id": ""
+      },
+      "validation": {},
+      "valid": true,
+      "touched": true,
+      "value": "Contact information",
+      "show": false
+    },
+    "address": {
+      "customBootstrapClass": "col-md-12",
+      "elementType": "input",
+      "elementConfig": {
+        "label": "Street",
+        "type": "street",
+        "placeholder": "Street Name "
+      },
+      "validation": {},
+      "valid": true,
+      "touched": true,
+      "errorText": "Street Name is required",
+      "value": "",
+      "key": 11,
+      "show": false
+    },
+    "apt": {
+      "customBootstrapClass": "col-md-12",
+      "elementType": "input",
+      "elementConfig": {
+        "label": "Apartment Number",
+        "type": "street",
+        "placeholder": "Apartment Number"
+      },
+      "validation": {},
+      "valid": true,
+      "touched": true,
+      "errorText": "Apartment Number is required",
+      "value": "",
+      "key": 12,
+      "show": false
+    },
+    "city": {
+      "customBootstrapClass": "col-md-12",
+      "elementType": "input",
+      "elementConfig": {
+        "label": "City",
+        "type": "city",
+        "placeholder": "City Name"
+      },
+      "validation": {},
+      "valid": true,
+      "touched": true,
+      "errorText": "City Name is required",
+      "value": "",
+      "key": 13,
+      "show": false
+    },
+
+    "zip_code": {
+      "customBootstrapClass": "col-md-12",
+      "elementType": "input",
+      "elementConfig": {
+        "label": "Zip Code",
+        "type": "zip",
+        "placeholder": "Your Zip Code"
+      },
+      "validation": {},
+      "valid": true,
+      "touched": true,
+      "errorText": "Your Zip Code is required",
+      "value": "",
+      "key": 15,
+      "show": false
+    },
+    "country": {
+      "customBootstrapClass": "col-md-12",
+      "elementType": "CountryDropdown",
+      "elementConfig": {
+        "label": "Country",
+        "type": "county",
+        "defaultOptionLabel": "Select a country."
+      },
+
+      "validation": {},
+      "valid": true,
+      "touched": true,
+      "errorText": "Country is required",
+      "value": "",
+      "key": 14,
+      "show": false
+    },
+    "state": {
+      "customBootstrapClass": "col-md-12",
+      "elementType": "RegionDropdown",
+      "elementConfig": {
+        "label": "State",
+        "type": "state",
+        "blankOptionLabel": "No country selected.",
+        "defaultOptionLabel": "Now select a region, pal."
+      },
+      "validation": {},
+      "valid": true,
+      "touched": true,
+      "errorText": "State is required",
+      "value": "",
+      "key": 16,
+      "show": false
+    },
+    "phone_number": {
+      "customBootstrapClass": "col-md-12",
+      "elementType": "phone",
+      "elementConfig": {
+        "label": "Phone number",
+        "type": "text",
+        "placeholder": "Cell Phone Number"
+      },
+      "validation": {
+        "phoneRequired": true
+      },
+      "valid": false,
+      "touched": false,
+      "errorText": "Cell Phone Number is required",
+      "value": "",
+      "key": 4,
+      "show": false
+    },
+    "emergency_contact_title": {
+      "customBootstrapClass": "col-md-12",
+      "elementType": "text",
+      "elementConfig": {
+        "className": "h2_style",
+        "id": ""
+      },
+      "validation": {},
+      "valid": true,
+      "touched": true,
+      "value": "Emergency contact",
+      "show": false
+    },
+    "emergency_name": {
+      "customBootstrapClass": "col-md-12",
+      "elementType": "input",
+      "elementConfig": {
+        "label": "Emergency Name",
+        "type": "text",
+        "placeholder": "Emergency Name"
+      },
+      "validation": {},
+      "valid": false,
+      "touched": false,
+      "errorText": "Emergency name is required",
+      "value": "",
+      "key": 22,
+      "show": false
+    },
+    "emergency_phone": {
+      "customBootstrapClass": "col-md-12",
+      "elementType": "phone",
+      "elementConfig": {
+        "label": "Emergency phone number",
+        "type": "text",
+        "placeholder": "Emergency Phone Number"
+      },
+      "validation": {
+        "phoneRequired": true
+      },
+      "valid": false,
+      "touched": false,
+      "errorText": "Emergency number is required",
+      "value": "",
+      "key": 23,
+      "show": false
+    },
+
+    "Activate_wristband_title": {
+      "customBootstrapClass": "col-md-12",
+      "elementType": "text",
+      "elementConfig": {
+        "className": "h2_style",
+        "id": ""
+      },
+      "validation": {},
+      "valid": true,
+      "touched": true,
+      "value": "Activate your ticket",
+      "show": false
+    },
+    "verification_code": {
+      "customBootstrapClass": "col-md-12",
+      "elementType": "input",
+      "elementConfig": {
+        "type": "text",
+        "placeholder": "verification code"
+      },
+
+      "validation": {
+        "required": true,
+        "isHexadecimal": true
+      },
+      "valid": false,
+      "touched": false,
+      "errorText": "Your Code should be a hexadecimal",
+      "value": "",
+      "show": false
+    },
+
+    "serial_number": {
+      "customBootstrapClass": "col-md-12",
+      "elementType": "input",
+      "elementConfig": {
+        "type": "text",
+        "placeholder": "wristband number"
+      },
+
+      "validation": {
+        "required": true,
+        "isNumeric": true
+      },
+      "valid": false,
+      "touched": false,
+      "errorText": "wristband number required",
+      "value": "",
+      "show": false
+    },
+    "Activate_separation": {
+      "customBootstrapClass": "col-md-12",
+      "elementType": "text",
+      "elementConfig": {
+        "className": "h2_style",
+        "id": ""
+      },
+      "validation": {},
+      "valid": true,
+      "touched": true,
+      "value": "or",
+      "show": false
+    },
+    "barcode_number": {
+      "customBootstrapClass": "col-md-12",
+      "elementType": "input",
+      "elementConfig": {
+        "type": "text",
+        "placeholder": "barcode number"
+      },
+
+      "validation": {
+        "required": true,
+        "isNumeric": true
+      },
+      "valid": false,
+      "touched": false,
+      "errorText": "barcode number required",
+      "value": "",
+      "show": false
+    },
+    "checkbox": {
+      "customBootstrapClass": "col-md-12",
+      "elementType": "input",
+      "elementConfig": {
+        "inputClass": "checkbox-input",
+        "type": "checkbox",
+        "name": "confirm",
+        "label": "I authorize Microsite to store the personal information I submit on this website."
+      },
+      "validation": {
+        "isChecked": true
+      },
+      "checked": false,
+      "valid": false,
+      "touched": false,
+      "errorText": "Please click the checkbox",
+      "value": "confirmed",
+      "show": true
+    }
+  }
+}

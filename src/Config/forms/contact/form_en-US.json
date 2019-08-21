@@ -1,0 +1,22 @@
+{
+  "views": {
+    "message": {
+      "customBootstrapClass": "col-md-12",
+      "elementType": "textarea",
+      "elementConfig": {
+        "label": "Your Message*",
+        "type": "text",
+        "placeholder": ""
+      },
+
+      "validation": {
+        "required": true
+      },
+      "valid": false,
+      "touched": false,
+      "errorText": "Your message is required",
+      "value": "",
+      "defaultValue": ""
+    }
+  }
+}

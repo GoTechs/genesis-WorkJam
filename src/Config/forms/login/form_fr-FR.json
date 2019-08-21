@@ -1,0 +1,43 @@
+{
+  "views": {
+    "email": {
+      "customBootstrapClass": "col-md-12",
+      "elementType": "input",
+      "elementConfig": {
+        "label": "Email",
+        "type": "email",
+        "placeholder": ""
+      },
+      "validation": {
+        "required": true,
+        "isEmail": true
+      },
+      "valid": false,
+      "touched": false,
+      "errorText": "You have entered an Invalid email",
+      "value": ""
+    },
+
+    "password": {
+      "customBootstrapClass": "col-md-12",
+      "elementType": "input",
+      "elementConfig": {
+        "label": "Password",
+        "type": "password",
+        "placeholder": "",
+        "password": true,
+        "id": "password"
+      },
+
+      "validation": {
+        "required": true,
+        "minLength": 3,
+        "maxLength": 10
+      },
+      "valid": false,
+      "touched": false,
+      "errorText": "Your password should have minimum 3 characters and max 10",
+      "value": ""
+    }
+  }
+}

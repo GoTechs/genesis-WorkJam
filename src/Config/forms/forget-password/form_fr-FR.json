@@ -1,0 +1,22 @@
+{
+  "views": {
+    "email": {
+      "customBootstrapClass": "col-md-12",
+      "elementType": "input",
+      "elementConfig": {
+        "label": "Email*",
+        "inputClass": "",
+        "type": "email",
+        "placeholder": ""
+      },
+      "validation": {
+        "required": true,
+        "isEmail": true
+      },
+      "valid": false,
+      "touched": false,
+      "errorText": "invalid email",
+      "value": ""
+    }
+  }
+}

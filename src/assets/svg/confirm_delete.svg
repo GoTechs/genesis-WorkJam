@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="96px" height="96px" viewBox="0 0 96 96" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 52.6 (67491) - http://www.bohemiancoding.com/sketch -->
+    <title>Group 2</title>
+    <desc>Created with Sketch.</desc>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Page---Home-page---DISABLE" transform="translate(-140.000000, -125.000000)" fill="#D0021B" fill-rule="nonzero">
+            <g id="Group-2" transform="translate(143.000000, 128.000000)">
+                <path d="M44.955,0 C20.115,0 0,20.16 0,45 C0,69.84 20.115,90 44.955,90 C69.84,90 90,69.84 90,45 C90,20.16 69.84,0 44.955,0 Z M45,81 C25.11,81 9,64.89 9,45 C9,25.11 25.11,9 45,9 C64.89,9 81,25.11 81,45 C81,64.89 64.89,81 45,81 Z" id="Shape" stroke="#FFFFFF" stroke-width="5"></path>
+                <polygon id="Path" points="41.2627119 58.5 50.2627119 58.5 50.2627119 67.5 41.2627119 67.5"></polygon>
+                <polygon id="Path" points="41.2627119 24.7881356 50.2627119 24.7881356 50.2627119 51.7881356 41.2627119 51.7881356"></polygon>
+            </g>
+        </g>
+    </g>
+</svg>

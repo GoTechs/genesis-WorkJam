@@ -1,0 +1,125 @@
+@import '../../assets/styles/global.sass'
+@import '../../assets/styles/layout.sass'
+
+.App
+  position: relative
+  transition: all 0.5s ease
+  height: 100%
+  display: grid
+  grid-template-columns: 1fr
+  
+  &.login
+     display: grid
+     grid-template-rows: 90px 20px 1px 1fr 40px
+     grid-template-columns: 1fr
+     background: $image-background-desktop
+     -webkit-background-size: cover
+     -moz-background-size: cover
+     -o-background-size: cover
+     background-size: cover
+     .header
+       .logo
+        text-align: center
+     .footer
+       margin-top: 0
+       border-top: 2px solid rgba(255, 255, 255, .2)
+       .nav-footer 
+        .footer-title
+         color: $background-white
+        >li
+         >a
+          color: $background-white
+  &.register
+     display: grid
+     grid-template-rows: 120px 20px 1px 1fr 40px
+     grid-template-columns: 1fr
+     background-color: $auth-background
+     height: auto
+     .app-container
+       height: 100%
+       display: grid
+       color: $background-white
+     .footer
+       margin-top: 0
+       border-top: 2px solid rgba(255, 255, 255, .2)
+       .nav-footer 
+        .footer-title
+         color: $background-white
+        >li
+         >a
+          color: $background-white
+            
+  .InputElement
+   background-color: #4cd964
+
+  .h2_style
+    font-size: 30px
+    letter-spacing: 2.22
+    margin-top: 30px
+    padding-top: 0
+    margin-bottom: 15px
+    padding-bottom: 0
+    font-family: $main-font-bold 
+    border-bottom: 1px solid $primary-color5
+    color: $primary-color5
+    &#grey
+     color: $primary-color4
+     border-bottom: 1px solid $primary-color4
+
+  label
+    label
+    font-family: $main-font-regular
+    font-size: 20px
+    margin-top: 15px
+    padding-top: 0
+    margin-bottom: 2px
+    padding-bottom: 0
+    color: $background-white
+    margin-top: .5rem
+
+.birthdate_field
+  width: 30%
+  margin-right: 3%
+  label
+    display: block
+    min-width: 10px
+    min-height: 30px
+
+.diplay-container
+  margin-top: 180px
+  text-align: center
+  h1
+    fontFamily: $main-font-bold
+    font-size: 50px
+    margin-bottom: 20px
+  h3
+    fontFamily: $main-font-bold
+    font-size: 30px
+  .txt-content
+    margin-bottom: 80px
+
+
+
+@media only screen and (max-width: 600px)
+  .App
+    transition: all 0.5s ease
+
+/* 
+ *##Device = Most of the Smartphones Mobiles (Portrait)
+ *##Screen = B/w 320px to 479px
+
+@media (min-width: 320px) and (max-width: 480px)
+  
+  .App
+   display: block
+   &.register
+      grid-template-rows: 60px 20px 1fr 78px
+      
+   &.login
+     grid-template-rows: 60px 20px 1fr 78px
+     .app-container
+      margin-top: 40px
+   label
+     font-size: 15px
+   .h2_style
+    font-size: 25px

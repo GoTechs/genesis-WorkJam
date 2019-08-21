@@ -1,0 +1,43 @@
+{
+  "views": {
+    "password": {
+      "customBootstrapClass": "col-md-12",
+      "elementType": "input",
+      "elementConfig": {
+        "inputClass": "",
+        "label": "Password",
+        "type": "password",
+        "placeholder": ""
+      },
+
+      "validation": {
+        "required": true,
+        "minLength": 3,
+        "maxlength": 10
+      },
+      "valid": false,
+      "touched": false,
+      "errorText": "Your password should have minimum 3 characters and max 10",
+      "value": ""
+    },
+    "confirmPassword": {
+      "customBootstrapClass": "col-md-12",
+      "elementType": "input",
+      "elementConfig": {
+        "inputClass": "",
+        "label": "Confirm password",
+        "type": "password",
+        "placeholder": ""
+      },
+
+      "validation": {
+        "required": true,
+        "isConfirm": true
+      },
+      "valid": false,
+      "touched": false,
+      "errorText": "password not match",
+      "value": ""
+    }
+  }
+}

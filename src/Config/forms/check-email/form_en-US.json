@@ -1,0 +1,21 @@
+{
+  "views": {
+    "email": {
+      "customBootstrapClass": "col-md-12",
+      "elementType": "input",
+      "elementConfig": {
+        "label": "Enter your email",
+        "type": "email",
+        "placeholder": ""
+      },
+      "validation": {
+        "required": true,
+        "isEmail": true
+      },
+      "valid": false,
+      "touched": false,
+      "errorText": "You have entered an Invalid email",
+      "value": ""
+    }
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "flows": {
+    "flow1": {
+      "steps": [
+        { "name": "activateWristband", "skip": false },
+        { "name": "register", "skip": true },
+        { "name": "emailValidation", "skip": false }
+      ]
+    },
+    "flow2": {
+      "steps": [
+        { "name": "activateWristband", "skip": false },
+        { "name": "register", "skip": false },
+        { "name": "emailValidation", "skip": false }
+      ]
+    }
+  }
+}

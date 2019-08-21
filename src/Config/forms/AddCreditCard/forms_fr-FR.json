@@ -1,0 +1,111 @@
+{
+  "views": {
+    "type": {
+      "customBootstrapClass": "col-md-12",
+      "elementType": "select",
+      "inputClass": "",
+      "elementConfig": {
+        "label": "Gender",
+        "options": [
+          { "value": "", "displayValue": "Card Type" },
+          { "value": "VISA", "displayValue": "VISA" },
+          { "value": "MASTERCARD", "displayValue": "MasterCard" },
+          { "value": "AMEX", "displayValue": "AMEX" }
+        ]
+      },
+      "validation": {},
+      "valid": true,
+      "value": "",
+      "key": 21
+    },
+    "cardNumber": {
+      "customBootstrapClass": "col-md-12",
+      "elementType": "input",
+      "elementConfig": {
+        "type": "input",
+        "placeholder": ""
+      },
+
+      "validation": {
+        "required": true,
+        "isNumeric": true
+      },
+      "valid": false,
+      "touched": false,
+      "errorText": "you should input your card number",
+      "value": ""
+    },
+    "holderName": {
+      "customBootstrapClass": "col-md-12",
+      "elementType": "input",
+      "elementConfig": {
+        "type": "input",
+        "placeholder": "name"
+      },
+
+      "validation": {
+        "required": true
+      },
+      "valid": false,
+      "touched": false,
+      "errorText": "you should input your name",
+      "value": ""
+    },
+
+    "month": {
+      "customBootstrapClass": "col-md-12",
+      "elementType": "month",
+      "elementConfig": {
+        "label": " ",
+        "inputClass": "birthdate_field",
+        "defaultValue": "Month"
+      },
+      "caps": true,
+      "endYearGiven": true,
+      "value": "",
+      "validation": {
+        "required": true
+      },
+      "valid": false,
+      "touched": false,
+      "errorText": "Month required"
+    },
+    "year": {
+      "customBootstrapClass": "col-md-12",
+      "elementType": "year",
+      "elementConfig": {
+        "label": "",
+        "inputClass": "birthdate_field",
+        "defaultValue": "Year",
+        "start": 2019,
+        "end": 2050
+      },
+      "value": "",
+      "validation": {
+        "required": true
+      },
+      "valid": false,
+      "touched": false,
+      "errorText": "Year required"
+    },
+    "cvv": {
+      "customBootstrapClass": "col-md-12",
+      "elementType": "input",
+      "elementConfig": {
+        "type": "input",
+        "placeholder": "cvc"
+      },
+
+      "validation": {
+        "required": true,
+        "isNumeric": true,
+        "maxLength": 3,
+        "minLength": 3
+      },
+      "valid": false,
+      "touched": false,
+      "errorText": "you should input 3  just digit number",
+      "value": ""
+    }
+  }
+}

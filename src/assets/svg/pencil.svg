@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="14px" height="13px" viewBox="0 0 14 13" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 52.6 (67491) - http://www.bohemiancoding.com/sketch -->
+    <title>Bouton Edit</title>
+    <desc>Created with Sketch.</desc>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Page---Home-page---ALL-TICKETS" transform="translate(-326.000000, -470.000000)">
+            <g id="Bouton-Edit" transform="translate(323.000000, 466.000000)">
+                <rect id="Rectangle" x="0" y="0" width="20" height="20" rx="5"></rect>
+                <g id="Group" stroke-width="1" fill-rule="evenodd" transform="translate(4.000000, 4.000000)">
+                    <path d="M2,7.2302458 L2,8.75003472 C2,8.89001528 2.10998472,9 2.24996528,9 L3.7697542,9 C3.83474517,9 3.89973615,8.97500347 3.9447299,8.92501042 L9.40397167,3.47076795 L7.52923205,1.59602833 L2.07498958,7.0502708 C2.02499653,7.10026385 2,7.16025552 2,7.2302458 Z M10.8537703,2.02096931 C11.0487432,1.82599639 11.0487432,1.51104013 10.8537703,1.31606721 L9.68393279,0.14622969 C9.48895987,-0.0487432301 9.17400361,-0.0487432301 8.97903069,0.14622969 L8.06415776,1.06110262 L9.93889738,2.93584224 L10.8537703,2.02096931 Z" id="Shape" fill="#646263" fill-rule="nonzero"></path>
+                    <path d="M0,11.5 L11.3583984,11.5" id="Line" stroke="#646263" stroke-width="2" stroke-linecap="square"></path>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

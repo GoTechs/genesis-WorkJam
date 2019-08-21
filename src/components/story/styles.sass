@@ -1,0 +1,97 @@
+@import '../../assets/styles/global.sass'
+
+.ticket-list-container
+  width: 100%
+  padding: 0
+.list-group
+  width: 100%
+  .list-group-item
+   padding: 0
+  svg
+   path
+    fill: $icon-color
+   
+.header-ticket
+  background: $header-ticket-background  
+  display: flex
+  height: 45px
+  flex-direction: row
+  justify-content: space-between
+  border-bottom: 2px solid rgba(192, 192, 192, 0.2)
+  align-items: center
+  h2
+   margin-top: 15px
+ 
+.new-ticket-info, .ticket-edit
+  display: flex
+  flex-direction: row
+  justify-content: center
+  align-items: center
+  .wristband-icon-new-info
+   margin-right: 10px
+   width: 180px
+   height: 100%
+   max-width: 100%
+
+.ticket-item
+  padding: 0
+.wristband-icon
+ max-width: 80px
+ float: left
+ margin-top: 15px
+ height: 35px
+ margin-left: 10px
+
+.ticket-title
+ justify-content: space-between
+ height: 45px
+ display: flex
+ img
+  height: 15px
+  margin-left: 15px
+  margin-bottom: 3px
+ h2
+  margin: 0
+ .header-link
+  color: $link-color
+  margin-right: -7px
+
+
+.ticket-info
+ text-align: center
+ border-bottom: 2px solid rgba(192, 192, 192, 0.2);
+ margin-bottom: 10px
+ .ticket-icons
+  margin-right: 5px
+  .delete-icon
+   height: 20px
+   margin-right: 5px
+  .edit-icon
+    height: 30px
+    margin-right: 5px
+ &.disabled
+    opacity: 0.5
+    pointer-events: none
+ 
+.new-ticket-information, .ticket-info-edit
+
+ display: flex
+ flex-direction: column
+.last-user
+ margin-left: 20px
+.uid-code
+  display: flex
+.verification-code
+  display: flex
+
+
+/* 
+ *##Device = Most of the Smartphones Mobiles (Portrait)
+ *##Screen = B/w 320px to 479px
+
+@media (min-width: 320px) and (max-width: 480px)
+ .new-ticket-info  
+  .wristband-icon-new-info
+   margin-right: 5px
+   width: 120px
+   

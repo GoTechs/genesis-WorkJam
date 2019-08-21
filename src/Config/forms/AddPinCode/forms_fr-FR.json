@@ -1,0 +1,24 @@
+{
+  "views": {
+    "PIN": {
+      "customBootstrapClass": "col-md-12",
+      "elementType": "input",
+      "elementConfig": {
+        "type": "password",
+        "placeholder": "",
+        "label": "Pin Code"
+      },
+
+      "validation": {
+        "required": true,
+        "isNumeric": true,
+        "maxLength": 4,
+        "minLength": 4
+      },
+      "valid": false,
+      "touched": false,
+      "errorText": "pin code required",
+      "value": ""
+    }
+  }
+}

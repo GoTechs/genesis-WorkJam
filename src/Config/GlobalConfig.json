@@ -1,0 +1,84 @@
+{
+  "routes": {
+    "loginWithUserCredentials": false,
+    "loginWithEmail": false,
+    "workJim": true
+  },
+
+  "logoUrl": "https://cng-event-pictures.s3.amazonaws.com/genesis/Logo-Connect%26Go.png",
+  "logoPhoneUrl": "https://cng-event-pictures.s3.amazonaws.com/genesis/Logo-Connect%26Go.png",
+
+  "theme": {
+    "--auth-background": "#00A999",
+    "--button-enable": "#F4D036",
+    "--button-disable": "#FFCD05",
+    "--balance-background": "#F4D036",
+    "--link-color": "#F4D036",
+    "--icon-color": "#F4D036",
+    "--image-background-desktop": "url(https://cng-event-pictures.s3.amazonaws.com/genesis/image-background-desktop.png)",
+    "--image-background-header-desktop": "url(https://cng-event-pictures.s3.amazonaws.com/genesis/image-header-desktop.png)",
+    "--image-background-phone": "url(https://cng-event-pictures.s3.amazonaws.com/genesis/image-mobile.png)",
+    "--image-background-header-phone": "url(https://cng-event-pictures.s3.amazonaws.com/genesis/image-header-mobile.png)"
+  },
+
+  "components": {
+    "login": {
+      "show": {
+        "links": {
+          "validateWristbandLink": false,
+          "registerLink": true
+        },
+        "buttons": {}
+      },
+      "onSubmit": {}
+    },
+    "register": {
+      "show": {
+        "activateWristband": true,
+        "activateBarcode": true,
+        "links": {},
+        "buttons": {}
+      },
+      "validateEmail": true,
+      "onSubmit": {
+        "createOrder": false,
+        "updateOrder": false,
+        "createProfile": false,
+        "updateProfile": false,
+        "verifyWristbandAndRegister": true
+      }
+    },
+
+    "header": {
+      "show": {
+        "links": {
+          "ticket": true,
+          "wallet": true,
+          "loyaltyProgram": false,
+          "perosnalDetails": true,
+          "contactSupport": true
+        },
+        "buttons": {}
+      }
+    },
+    "footer": {
+      "show": {
+        "links": {
+          "ticket": true,
+          "wallet": true,
+          "loyaltyProgram": false,
+          "perosnalDetails": true,
+          "contactSupport": true
+        },
+        "buttons": {}
+      }
+    }
+  },
+
+  "layout": {
+    "show": {
+      "HorizontalSideDrawer": false,
+      "VerticalSideDrawer": true
+    }
+  }
+}

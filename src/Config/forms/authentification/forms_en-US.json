@@ -1,0 +1,227 @@
+{
+  "views": {
+    "activate-wristband": {
+      "wristbandNumber": {
+        "customBootstrapClass": "col-md-12",
+        "elementType": "input",
+        "elementConfig": {
+          "type": "text",
+          "placeholder": ""
+        },
+        "validation": {
+          "required": true,
+          "isNumeric": true
+        },
+        "valid": false,
+        "touched": false,
+        "errorText": "wristband number required",
+        "value": ""
+      },
+      "verificationCode": {
+        "customBootstrapClass": "col-md-12",
+        "elementType": "input",
+        "elementConfig": {
+          "type": "text",
+          "placeholder": "verification code"
+        },
+        "validation": {
+          "required": true,
+          "isHexadecimal": true
+        },
+        "valid": false,
+        "touched": false,
+        "errorText": "should be in hexadecimal",
+        "value": ""
+      }
+    },
+    "forgot-password": {
+      "email": {
+        "customBootstrapClass": "col-md-12",
+        "elementType": "input",
+        "elementConfig": {
+          "type": "email",
+          "placeholder": "your email"
+        },
+        "validation": {
+          "required": true,
+          "isEmail": true
+        },
+        "valid": false,
+        "touched": false,
+        "errorText": "You have entered an Invalid email",
+        "value": ""
+      }
+    },
+    "login": {
+      "email": {
+        "customBootstrapClass": "col-md-12",
+        "elementType": "input",
+        "elementConfig": {
+          "type": "email",
+          "placeholder": "your email"
+        },
+        "validation": {
+          "required": true,
+          "isEmail": true
+        },
+        "valid": false,
+        "touched": false,
+        "errorText": "invalid email",
+        "value": ""
+      },
+      "password": {
+        "customBootstrapClass": "col-md-12",
+        "elementType": "input",
+        "elementConfig": {
+          "type": "password",
+          "placeholder": "password"
+        },
+        "validation": {
+          "required": true,
+          "minLength": 3,
+          "maxLength": 10
+        },
+        "valid": false,
+        "touched": false,
+        "errorText": "Your password should have minimum 3 characters and max 10",
+        "value": ""
+      }
+    },
+    "register": {
+      "firstName": {
+        "customBootstrapClass": "col-md-12",
+        "elementType": "input",
+        "elementConfig": {
+          "type": "text",
+          "placeholder": "Your first Name"
+        },
+        "validation": {
+          "required": true
+        },
+        "valid": false,
+        "touched": false,
+        "errorText": "first name required",
+        "value": "",
+        "key": 1
+      },
+      "lastName": {
+        "customBootstrapClass": "col-md-12",
+        "elementType": "input",
+        "elementConfig": {
+          "type": "text",
+          "placeholder": "Your last Name"
+        },
+        "validation": {
+          "required": true
+        },
+        "valid": false,
+        "touched": false,
+        "errorText": "last name required",
+        "value": "",
+        "key": 2
+      },
+      "password": {
+        "customBootstrapClass": "col-md-12",
+        "elementType": "input",
+        "elementConfig": {
+          "type": "password",
+          "placeholder": "password"
+        },
+        "validation": {
+          "required": true,
+          "minLength": 5,
+          "maxLength": 5
+        },
+        "valid": false,
+        "touched": false,
+        "errorText": "passsword should have min 5 and max 8",
+        "value": ""
+      },
+      "confirmPassword": {
+        "customBootstrapClass": "col-md-12",
+        "elementType": "input",
+        "elementConfig": {
+          "type": "password",
+          "placeholder": " confirm password"
+        },
+        "validation": {
+          "required": true,
+          "isConfirm": true
+        },
+        "valid": false,
+        "touched": false,
+        "errorText": "password not match",
+        "value": ""
+      },
+      "email": {
+        "customBootstrapClass": "col-md-12",
+        "elementType": "input",
+        "elementConfig": {
+          "type": "email",
+          "placeholder": "your email"
+        },
+        "validation": {
+          "required": true,
+          "isEmail": true
+        },
+        "valid": false,
+        "touched": false,
+        "errorText": "invalid email",
+        "value": "",
+        "key": 3
+      },
+      "checkbox": {
+        "customBootstrapClass": "col-md-12",
+        "elementType": "input",
+        "elementConfig": {
+          "type": "checkbox",
+          "name": "confirm"
+        },
+        "validation": {
+          "isChecked": true
+        },
+        "checked": false,
+        "valid": false,
+        "touched": false,
+        "errorText": "Please click the checkbox",
+        "value": "confirm",
+        "text": "I authorize Microsite to store the personal information I submit on this website."
+      }
+    },
+    "reset-password": {
+      "password": {
+        "customBootstrapClass": "col-md-12",
+        "elementType": "input",
+        "elementConfig": {
+          "type": "password",
+          "placeholder": "password"
+        },
+        "validation": {
+          "required": true,
+          "minLength": 5,
+          "maxLength": 5
+        },
+        "valid": false,
+        "touched": false,
+        "errorText": "passsword should have min 5 and max 8",
+        "value": ""
+      },
+      "confirmPassword": {
+        "customBootstrapClass": "col-md-12",
+        "elementType": "input",
+        "elementConfig": {
+          "type": "password",
+          "placeholder": "confirm password"
+        },
+        "validation": {
+          "required": true,
+          "isConfirm": true
+        },
+        "valid": false,
+        "touched": false,
+        "errorText": "password not match",
+        "value": ""
+      }
+    }
+  }
+}

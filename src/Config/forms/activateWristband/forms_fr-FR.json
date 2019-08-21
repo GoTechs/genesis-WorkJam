@@ -1,0 +1,42 @@
+{
+  "views": {
+    "serial_number": {
+      "customBootstrapClass": "col-md-12",
+      "elementType": "input",
+      "elementConfig": {
+        "label": "Wristband Number*",
+        "type": "text",
+        "placeholder": "",
+        "information": true
+      },
+
+      "validation": {
+        "required": true,
+        "isNumeric": true
+      },
+      "valid": false,
+      "touched": false,
+      "errorText": "wristband number required",
+      "value": ""
+    },
+    "verification_code": {
+      "customBootstrapClass": "col-md-12",
+      "elementType": "input",
+      "elementConfig": {
+        "label": "verification code*",
+        "type": "text",
+        "placeholder": "",
+        "information": true
+      },
+
+      "validation": {
+        "required": true,
+        "isHexadecimal": true
+      },
+      "valid": false,
+      "touched": false,
+      "errorText": "Your Code should be a hexadecimal",
+      "value": ""
+    }
+  }
+}
