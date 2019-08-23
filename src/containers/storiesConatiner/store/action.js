@@ -4,8 +4,8 @@ import * as actions from "../../../store/actions";
 import { actions as toastrActions } from "react-redux-toastr";
 import helpers from "../../../Services/helpers";
 
-const Stories = [];
-const Comments = [];
+const stories = [];
+const comments = [];
 
 export const getMaxItemSuccess = response => {
   return {
@@ -21,25 +21,27 @@ export const getMaxItemFailed = () => {
 export const getMaxItemStart = () => {
   return dispatch => {
     dispatch(actions.showLoading());
-    Api.apiCall("maxitem").then(response => {
-      if (response) {
-        dispatch(getMaxItemSuccess(response));
+    Api.apiCall("maxitem")
+      .then(response => {
+        if (response) {
+          dispatch(getMaxItemSuccess(response));
+        } else {
+          dispatch(
+            toastrActions.add(
+              helpers.showPopUp({
+                id: "warning",
+                type: "warning",
+                title: "stories",
+                key: "",
+                options: {}
+              })
+            )
+          );
+        }
+      })
+      .then(() => {
         dispatch(getTopStoriesStart());
-      } else {
-        dispatch(
-          toastrActions.add(
-            helpers.showPopUp({
-              id: "register-show",
-              type: "warning",
-              title: "Registration",
-              key: "register:REGISTER_FAILED",
-              options: {}
-            })
-          )
-        );
-      }
-    });
-    dispatch(actions.hideLoading());
+      });
   };
 };
 export const getTenTopStoriesSuccess = data => {
@@ -55,33 +57,17 @@ export const getTopStoriesFailed = () => {
 };
 export const getTopStoriesStart = () => {
   return dispatch => {
-    dispatch(actions.showLoading());
-
-    Api.apiCall("topstories").then(response => {
-      const topTenStrories = response.slice(0, 10);
-      dispatch(getTenTopStoriesSuccess(topTenStrories));
-
-      topTenStrories.map(key => {
-        if (key) {
+    let topTenStrories = [];
+    Api.apiCall("topstories")
+      .then(response => {
+        topTenStrories = response.slice(0, 10);
+        dispatch(getTenTopStoriesSuccess(topTenStrories));
+      })
+      .then(() => {
+        topTenStrories.map(key => {
           dispatch(getStoryStart(key));
-        }
-        if (Stories) {
-          dispatch(getStorySuccess(Stories));
-        }
+        });
       });
-
-      dispatch(
-        toastrActions.add(
-          helpers.showPopUp({
-            id: "register-show",
-            type: "warning",
-            title: "Registration",
-            key: "register:REGISTER_FAILED",
-            options: {}
-          })
-        )
-      );
-    });
     dispatch(actions.hideLoading());
   };
 };
@@ -96,25 +82,19 @@ export const getStroryFailed = () => {
     type: actionType.GET_STORY_FAILED
   };
 };
+export const cleanComments = () => {
+  return {
+    type: actionType.CLEAN_COMMENTS
+  };
+};
 
 export const getStoryStart = story => {
-  return dispatch => {
-    dispatch(actions.showLoading());
+  return async dispatch => {
+    await dispatch(cleanComments());
     Api.apiCall(`item/${story}`).then(response => {
-      Stories.push(response);
-      dispatch(
-        toastrActions.add(
-          helpers.showPopUp({
-            id: "register-show",
-            type: "warning",
-            title: "Registration",
-            key: "register:REGISTER_FAILED",
-            options: {}
-          })
-        )
-      );
+      stories.push(response);
+      dispatch(getStorySuccess(stories));
     });
-    dispatch(actions.hideLoading());
   };
 };
 export const getCommentsSuccess = data => {
@@ -133,23 +113,13 @@ export const getCommentsClicked = idComments => {
   return dispatch => {
     dispatch(actions.showLoading());
     if (idComments) {
-      idComments.map(key => {
+      const topTwentyComment = idComments.slice(0, 19);
+      topTwentyComment.map(key => {
         Api.apiCall(`item/${key}`).then(response => {
-          Comments.push(response);
-          if (Comments) {
-            dispatch(getCommentsSuccess(Comments));
+          comments.push(response);
+          if (comments) {
+            dispatch(getCommentsSuccess(comments));
           }
-          dispatch(
-            toastrActions.add(
-              helpers.showPopUp({
-                id: "register-show",
-                type: "warning",
-                title: "Registration",
-                key: "register:REGISTER_FAILED",
-                options: {}
-              })
-            )
-          );
         });
       });
     }

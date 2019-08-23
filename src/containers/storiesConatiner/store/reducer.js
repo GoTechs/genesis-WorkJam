@@ -33,6 +33,8 @@ const storiesConatiner = (state = intialeState, action) => {
       return updateObject(state, { comments: action.payload });
     case actionsType.GET_COMMENT_FAILED:
       return updateObject(state);
+    case actionsType.CLEAN_COMMENTS:
+      return updateObject(state, { comments: null });
 
     default:
       return state;

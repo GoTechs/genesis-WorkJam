@@ -10,112 +10,137 @@ import Nav from "react-bootstrap/Nav";
 import { Link } from "react-router-dom";
 import Arrow from "../../assets/images/history.png";
 import Icon from "../../components/Icons";
+import { makeStyles } from "@material-ui/core/styles";
+import clsx from "clsx";
+import Card from "@material-ui/core/Card";
+import CardHeader from "@material-ui/core/CardHeader";
+import CardMedia from "@material-ui/core/CardMedia";
+import CardContent from "@material-ui/core/CardContent";
+import CardActions from "@material-ui/core/CardActions";
+import Collapse from "@material-ui/core/Collapse";
+import Avatar from "@material-ui/core/Avatar";
+import IconButton from "@material-ui/core/IconButton";
+import Typography from "@material-ui/core/Typography";
+import { red } from "@material-ui/core/colors";
+import FavoriteIcon from "@material-ui/icons/Favorite";
+import ShareIcon from "@material-ui/icons/Share";
+import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
+import MoreVertIcon from "@material-ui/icons/MoreVert";
+import Divider from "@material-ui/core/Divider";
+import List from "@material-ui/core/List";
+import ListItem from "@material-ui/core/ListItem";
+import ListItemText from "@material-ui/core/ListItemText";
+import ListItemAvatar from "@material-ui/core/ListItemAvatar";
 import "./styles.sass";
 
 const story = props => {
-  const {
-    usersInfo,
-    newWristbandInfo,
-    userTicketInfo,
-    handleDisableWristband,
-    editWristbandProfile
-  } = props;
-  return (
-    <div className="ticket-list-container">
-      <ListGroup>
-        <ListGroup.Item className="ticket-title">
-          <h2 id="grey">
-            <Trans i18nKey="wallet:WALLET_TICKET_TITLE">Ticket 1 Day </Trans>
-          </h2>
-          <Nav.Link
-            className="header-link"
-            eventKey="2"
-            as={Link}
-            to="/home/my-tickets/historic-ticket"
-          >
-            <Trans i18nKey="wallet:WALLET_HISTORIC_TICKET">
-              Historic Tickets
-            </Trans>
-            <Icon name="ticket-historic" />
-          </Nav.Link>
-        </ListGroup.Item>
+  const useStyles = makeStyles(theme => ({
+    card: {
+      maxWidth: "100%",
+      margin: 15
+    },
+    media: {
+      height: 0,
+      paddingTop: "56.25%" // 16:9
+    },
+    expand: {
+      transform: "rotate(0deg)",
+      marginLeft: "auto",
+      transition: theme.transitions.create("transform", {
+        duration: theme.transitions.duration.shortest
+      })
+    },
+    expandOpen: {
+      transform: "rotate(180deg)"
+    },
+    avatar: {
+      backgroundColor: red[500]
+    }
+  }));
+  const { story, expanded, handleExpandClick, comments, key } = props;
+  const classes = useStyles();
 
-        <div className="ticket-info">
-          <ListGroup.Item className="ticket-item">
-            <div className="header-ticket">
-              <h2 id="grey" className="name-user">
-                gfhjkl
-              </h2>
-              <div className="ticket-icons">
-                <img
-                  className="edit-icon"
-                  src={Edit}
-                  alt="edit-card"
-                  onClick={() => editWristbandProfile()}
-                />
-                <img
-                  className="delete-icon"
-                  src={Delete}
-                  alt="disable-card"
-                  onClick={() => handleDisableWristband()}
-                />
-              </div>
-            </div>
-            <img className="wristband-icon" src={Wristband} alt="wristband" />
-          </ListGroup.Item>
-        </div>
-      </ListGroup>
-      {usersInfo && (
-        <Button primary onClick={props.addWristband}>
-          <Trans i18nKey="ADD_TICKET_BTN">+Add Ticket </Trans>
-        </Button>
-      )}
-      {props.newWristbandInfo && (
-        <div className="new-ticket-info">
-          <Icon name="wristband" className="wristband-icon-new-info" />
-          <div className="new-ticket-information">
-            <div className="uid-code">
-              <h5>
-                <Trans i18nKey="wristband:WRISTBAND_WRISTBAND_NUMBER">
-                  Wristband Number
-                </Trans>
-              </h5>
-              <h6>{newWristbandInfo.serial_number}</h6>
-            </div>
-            <div className="verification-code">
-              <h5>
-                <Trans i18nKey="wristband:WRISTBAND_VERIFICATION_CODE">
-                  Verification Code
-                </Trans>
-              </h5>
-              <h6>{newWristbandInfo.verification_code}</h6>
-            </div>
-          </div>
-        </div>
-      )}
-      {userTicketInfo && (
-        <div className="ticket-edit">
-          <Icon name="wristband" className="wristband-icon-new-info" />
-          <div className="ticket-info-edit">
-            <div className="uid-code">
-              <h5>
-                <Trans i18nKey="wristband:WRISTBAND_WRISTBAND_NUMBER">
-                  Wristband Number
-                </Trans>
-              </h5>
-              <h6>{userTicketInfo.Number}</h6>
-            </div>
-            <div className="verification-code">
-              <h5>
-                <Trans i18nKey="wristband:WRISTBAND_VERIFICATION_CODE">
-                  Verification Code
-                </Trans>
-              </h5>
-              <h6>{userTicketInfo.UID}</h6>
-            </div>
-          </div>
-        </div>
-      )}
+  return (
+    <div className="list-container">
+      <Card className={classes.card}>
+        <CardHeader
+          avatar={
+            <Avatar aria-label="recipe" className={classes.avatar}>
+              {key}
+            </Avatar>
+          }
+          action={
+            <IconButton aria-label="settings">
+              <MoreVertIcon />
+            </IconButton>
+          }
+          title={story.by}
+          subheader={story.time}
+        />
+        <CardMedia
+          className={classes.media}
+          image="/static/images/cards/paella.jpg"
+          title="Paella dish"
+        />
+        <CardContent>
+          <Typography variant="body2" color="textSecondary" component="p">
+            {story.title}
+          </Typography>
+        </CardContent>
+        <CardActions disableSpacing>
+          <IconButton aria-label="add to favorites">
+            <FavoriteIcon />
+          </IconButton>
+          <IconButton aria-label="share">
+            <ShareIcon />
+          </IconButton>
+          <IconButton
+            className={clsx(classes.expand, {
+              [classes.expandOpen]: expanded
+            })}
+            onClick={() => handleExpandClick(story.kids)}
+            aria-expanded={expanded}
+            aria-label="show more"
+          >
+            <ExpandMoreIcon />
+          </IconButton>
+        </CardActions>
+        <Collapse in={expanded} timeout="auto" unmountOnExit>
+          <CardContent>
+            <Typography paragraph>Comments</Typography>
+            {comments &&
+              comments.map((comment, key) => (
+                <List className={classes.root} key={key}>
+                  <ListItem alignItems="flex-start">
+                    <ListItemAvatar>
+                      <Avatar
+                        alt="Remy Sharp"
+                        src="/static/images/avatar/1.jpg"
+                      />
+                    </ListItemAvatar>
+                    <ListItemText
+                      primary="Brunch this weekend?"
+                      secondary={
+                        <React.Fragment>
+                          <Typography
+                            component="span"
+                            variant="body2"
+                            className={classes.inline}
+                            color="textPrimary"
+                          >
+                            {comment.by}
+                          </Typography>
+                          {comment.text}
+                        </React.Fragment>
+                      }
+                    />
+                  </ListItem>
+                  <Divider variant="inset" component="li" />
+                </List>
+              ))}
+          </CardContent>
+        </Collapse>
+      </Card>
     </div>
   );
 };

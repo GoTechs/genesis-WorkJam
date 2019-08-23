@@ -1,11 +1,11 @@
 import React from "react";
 import GlobalConfig from "../../Config/GlobalConfig.json";
 import styles from "./styles.sass";
-const LogoDesk = GlobalConfig.logoUrl;
+import WorkJamLogo from "../../assets/images/WorkJam-Blog-Logo.png";
 
 const logo = props => (
   <div className="logo">
-    <img src={LogoDesk} alt="logo" />
+    <img src={WorkJamLogo} alt="logo" />
   </div>
 );
 

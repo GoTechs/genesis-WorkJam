@@ -37,13 +37,9 @@ class App extends Component {
       <div className="App">
         {this.props.loading && <Loader />}
         <ErrorBoundary>
-          {!auth.getUserAuth() && (
-            <Header languageCliked={this.changeLanguage} />
-          )}
           <CSSVariablesApplicator cssVariables={this.props.theme} />
           <ReduxToastr />
           <RouterComponent />
-          <Footer />
         </ErrorBoundary>
       </div>
     );

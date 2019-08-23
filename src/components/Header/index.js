@@ -7,7 +7,6 @@ const header = props => {
   return (
     <div className="header">
       <Logo />
-      <Language languageCliked={props.languageCliked} />
     </div>
   );
 };
