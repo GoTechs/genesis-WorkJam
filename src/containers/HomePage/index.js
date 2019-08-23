@@ -8,11 +8,9 @@ import PropTypes from "prop-types";
 import Auth from "../../Services/auth";
 import "./styles.sass";
 import { withNamespaces } from "react-i18next";
-import TicketContainer from "../TicketsContainer";
 import StoriesConatiner from "../storiesConatiner";
 import NavigationBar from "../../components/NavigationBar";
 import { Switch, Route } from "react-router-dom";
-import WalletContainer from "../WalletContainer";
 import Contact from "../../components/Contact";
 import PersonalDetails from "../../components/PersonalDetails";
 import SideDrawer from "../../components/SideDrawer";
@@ -31,8 +29,6 @@ class HomePage extends React.Component {
   };
   componentDidMount() {
     this.addClass();
-    this.props.getAllUsers();
-    this.props.getWristbandBalance();
   }
 
   sideDrawerToggle = () => {

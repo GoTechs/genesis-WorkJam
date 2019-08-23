@@ -5,7 +5,6 @@
  */
 import React, { Component } from "react";
 import WrappedTranslationRegister from "../../Common/HOC/WrappedTranslationRegister";
-import ActivateWristbandContainer from "../activateWristbandContainer";
 import { get, map, pickBy } from "lodash";
 import Button from "../../components/Button";
 import Input from "../../components/Input";
@@ -16,7 +15,6 @@ import FormServices from "../../Services/formServices";
 import dataServices from "../../Services/dataServices";
 import Config from "../../Config/GlobalConfig.json";
 import { withRouter } from "react-router-dom";
-import Ticket from "../../components/Ticket";
 import withReducer from "../../store/withReducer";
 import registerReducer from "./store/reducer";
 import { connect } from "react-redux";

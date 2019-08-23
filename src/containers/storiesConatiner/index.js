@@ -5,7 +5,6 @@ import Button from "../../components/Button";
 import { Switch, Route } from "react-router-dom";
 import AddCommentModal from "../../components/ModalContainer";
 import ConfimrationModal from "../../components/ModalContainer";
-import InformationWristband from "../../components/InformationWristband";
 import Auth from "../../Services/auth";
 import Confirmation from "../../assets/images/confirmation.png";
 import Story from "../../components/story";
@@ -23,6 +22,9 @@ class StoryContainer extends Component {
     ticketInfo: {},
     eventKey: 1
   };
+  componentWillMount() {
+    this.props.getMaxItemStart();
+  }
 
   editWristbandProfile = userId => {
     this.setState({
@@ -58,12 +60,16 @@ class StoryContainer extends Component {
 
   render() {
     const { showAddWristbandModel, showConfirmationModal } = this.state;
+    console.log("hello", this.props.stories);
     return (
       <div className="ticket-container">
         <Story
           showDisable={false}
           userTicketInfo={this.state.profileInfo.infoTicket}
         />
+        <button onClick={() => this.props.getCommentsClicked()}>
+          get comments
+        </button>
         <div className="col-md-12 buttonContainer">
           {/* <AddCommentModal
             show={showAddWristbandModel}
@@ -123,21 +129,21 @@ class StoryContainer extends Component {
 const mapStateToProps = state => {
   return {
     loading: state.loading.loading,
-    isWristbandDisabled: state.ticketReducer.isWristbandDisabled,
-    usersInfo: state.homePage.usersInfo,
-    mainUserInfo: state.homePage.mainUserInfo,
-    wristbandBalanceInfo: state.homePage.wristbandBalanceInfo
+    maxItem: state.storyReducer.maxItem,
+    topTenStories: state.storyReducer.topTenStories,
+    stories: state.storyReducer.stories
   };
 };
 const mapDispatchToProps = dispatch => {
   return {
-    disableWristbandClicked: ticketInfo =>
-      dispatch(actions.disableWristbandClicked(ticketInfo))
+    getMaxItemStart: () => dispatch(actions.getMaxItemStart()),
+    getCommentsClicked: () =>
+      dispatch(actions.getCommentsClicked([20773389, 20773528]))
   };
 };
-export default withReducer("ticketReducer", reducer)(
+export default withReducer("storyReducer", reducer)(
   connect(
     mapStateToProps,
     mapDispatchToProps
-  )(withNamespaces("wristband")(StoryContainer))
+  )(withNamespaces("story")(StoryContainer))
 );

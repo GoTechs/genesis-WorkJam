@@ -8,7 +8,6 @@ import Edit from "../../assets/images/EditBtn.png";
 import Wristband from "../../assets/images/bracelet-black.png";
 import Nav from "react-bootstrap/Nav";
 import { Link } from "react-router-dom";
-import Ticketinfo from "../TicketInfo";
 import Arrow from "../../assets/images/history.png";
 import Icon from "../../components/Icons";
 import "./styles.sass";
@@ -63,7 +62,6 @@ const story = props => {
               </div>
             </div>
             <img className="wristband-icon" src={Wristband} alt="wristband" />
-            <Ticketinfo wristbandInfo="hvj" />
           </ListGroup.Item>
         </div>
       </ListGroup>

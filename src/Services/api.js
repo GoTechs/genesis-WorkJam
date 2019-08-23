@@ -6,13 +6,14 @@
 
 import axios from "axios";
 import Auth from "../Services/auth";
+axios.defaults.baseURL = "https://hacker-news.firebaseio.com/v0/";
 
 const api = {
-  apiCall(data, method) {
+  apiCall(method, id) {
     return axios({
-      url: `/proxy/${method}.php`,
-      method: "POST",
-      data: data
+      url: `${method}.json`,
+      method: "GET",
+      data: null
     }).then(response => response.data);
   },
   login(data) {
