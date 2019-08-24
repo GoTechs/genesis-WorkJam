@@ -11,7 +11,7 @@ class StoryContainer extends Component {
   state = {
     expanded: false
   };
-  componentWillMount() {
+  componentDidMount() {
     this.props.getMaxItemStart();
   }
 
@@ -27,7 +27,8 @@ class StoryContainer extends Component {
     const { stories, comments } = this.props;
     return (
       <div className="ticket-container">
-        {stories &&
+        {this.props.sStories ? (
+          stories &&
           stories.map((story, key) => {
             return (
               <Story
@@ -38,7 +39,10 @@ class StoryContainer extends Component {
                 handleExpandClick={this.handleExpandClick}
               />
             );
-          })}
+          })
+        ) : (
+          <div>wait it is loading </div>
+        )}
       </div>
     );
   }
@@ -56,6 +60,7 @@ const mapStateToProps = state => {
 const mapDispatchToProps = dispatch => {
   return {
     getMaxItemStart: () => dispatch(actions.getMaxItemStart()),
+    getStorySuccess: () => dispatch(actions.getStorySuccess()),
     getCommentsClicked: idComments =>
       dispatch(actions.getCommentsClicked(idComments))
   };

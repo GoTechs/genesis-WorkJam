@@ -3,10 +3,10 @@ import { updateObject } from "../../../store/utilityStore";
 
 const intialeState = {
   maxItem: null,
-  topTenStories: null,
+  topTenStories: [],
   loading: false,
-  stories: null,
-  comments: null
+  stories: [],
+  comments: []
 };
 
 const storiesConatiner = (state = intialeState, action) => {
@@ -22,7 +22,9 @@ const storiesConatiner = (state = intialeState, action) => {
     case actionsType.GET_MAX_ITEM_FAILED:
       return updateObject(state);
     case actionsType.GET_TOP_STORIES_SUCCESS:
-      return updateObject(state, { topTenStories: action.payload });
+      return updateObject(state, {
+        topTenStories: action.payload
+      });
     case actionsType.GET_TOP_STORIES_FAILED:
       return updateObject(state);
     case actionsType.GET_STORY_SUCCESS:

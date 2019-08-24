@@ -21,7 +21,6 @@ class RouterComponent extends Component {
   }
 
   render() {
-    console.log(this.props.routes);
     return (
       <div className="app-container">
         <Switch>

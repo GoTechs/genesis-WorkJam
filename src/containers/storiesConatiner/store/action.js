@@ -19,29 +19,14 @@ export const getMaxItemFailed = () => {
   };
 };
 export const getMaxItemStart = () => {
-  return dispatch => {
-    dispatch(actions.showLoading());
-    Api.apiCall("maxitem")
-      .then(response => {
-        if (response) {
-          dispatch(getMaxItemSuccess(response));
-        } else {
-          dispatch(
-            toastrActions.add(
-              helpers.showPopUp({
-                id: "warning",
-                type: "warning",
-                title: "stories",
-                key: "",
-                options: {}
-              })
-            )
-          );
-        }
-      })
-      .then(() => {
-        dispatch(getTopStoriesStart());
-      });
+  return async dispatch => {
+    await dispatch(actions.showLoading());
+    const maxitem = await Api.apiCall("maxitem");
+    await dispatch(getMaxItemSuccess(maxitem));
+    if (maxitem > 10) {
+      await dispatch(getTopStoriesStart());
+    }
+    await dispatch(actions.hideLoading());
   };
 };
 export const getTenTopStoriesSuccess = data => {
@@ -56,19 +41,14 @@ export const getTopStoriesFailed = () => {
   };
 };
 export const getTopStoriesStart = () => {
-  return dispatch => {
+  return async dispatch => {
     let topTenStrories = [];
-    Api.apiCall("topstories")
-      .then(response => {
-        topTenStrories = response.slice(0, 10);
-        dispatch(getTenTopStoriesSuccess(topTenStrories));
-      })
-      .then(() => {
-        topTenStrories.map(key => {
-          dispatch(getStoryStart(key));
-        });
-      });
-    dispatch(actions.hideLoading());
+    const response = await Api.apiCall("topstories");
+    topTenStrories = await response.slice(0, 10);
+    await dispatch(getTenTopStoriesSuccess(topTenStrories));
+    const storiesResult = await topTenStrories.map(key => {
+      dispatch(getStoryStart(key));
+    });
   };
 };
 export const getStorySuccess = data => {
@@ -90,11 +70,9 @@ export const cleanComments = () => {
 
 export const getStoryStart = story => {
   return async dispatch => {
-    await dispatch(cleanComments());
-    Api.apiCall(`item/${story}`).then(response => {
-      stories.push(response);
-      dispatch(getStorySuccess(stories));
-    });
+    const response = await Api.apiCall(`item/${story}`);
+    await stories.push(response);
+    dispatch(actions.hideLoading());
   };
 };
 export const getCommentsSuccess = data => {
@@ -110,20 +88,15 @@ export const getCommentsFailed = () => {
 };
 
 export const getCommentsClicked = idComments => {
-  return dispatch => {
-    dispatch(actions.showLoading());
-    if (idComments) {
-      const topTwentyComment = idComments.slice(0, 19);
-      topTwentyComment.map(key => {
-        Api.apiCall(`item/${key}`).then(response => {
-          comments.push(response);
-          if (comments) {
-            dispatch(getCommentsSuccess(comments));
-          }
-        });
-      });
-    }
-
-    dispatch(actions.hideLoading());
+  return async dispatch => {
+    await dispatch(actions.showLoading());
+    await dispatch(cleanComments());
+    const topTwentyComment = idComments.slice(0, 19);
+    const topTwentyCommentResult = await topTwentyComment.map(async key => {
+      const response = await Api.apiCall(`item/${key}`);
+      await comments.push(response);
+      await dispatch(getCommentsSuccess(comments));
+    });
+    await dispatch(actions.hideLoading());
   };
 };
