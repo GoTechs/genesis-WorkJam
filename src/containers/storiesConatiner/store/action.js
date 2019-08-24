@@ -2,10 +2,8 @@ import * as actionType from "../../../store/actions/actionType";
 import Api from "../../../Services/api";
 import * as actions from "../../../store/actions";
 import { actions as toastrActions } from "react-redux-toastr";
-import helpers from "../../../Services/helpers";
 
 const stories = [];
-const comments = [];
 
 export const getMaxItemSuccess = response => {
   return {
@@ -45,18 +43,21 @@ export const getTopStoriesStart = () => {
     let topTenStrories = [];
     const response = await Api.apiCall("topstories");
     topTenStrories = await response.slice(0, 10);
-    await dispatch(getTenTopStoriesSuccess(topTenStrories));
-    const storiesResult = await topTenStrories.map(key => {
-      dispatch(getStoryStart(key));
+    await dispatch(getTenTopStoriesSuccess({ topTenStrories: topTenStrories }));
+    await topTenStrories.map(async key => {
+      await dispatch(getStoryStart(key));
     });
+
+    await dispatch(actions.hideLoading());
   };
 };
-export const getStorySuccess = data => {
+export const getStorySuccess = (story, stories) => {
   return {
     type: actionType.GET_STORY_SUCCESS,
-    payload: data
+    payload: { story: story, stories: stories }
   };
 };
+
 export const getStroryFailed = () => {
   return {
     type: actionType.GET_STORY_FAILED
@@ -72,15 +73,16 @@ export const getStoryStart = story => {
   return async dispatch => {
     const response = await Api.apiCall(`item/${story}`);
     await stories.push(response);
-    dispatch(actions.hideLoading());
+    await dispatch(getStorySuccess(response, stories));
   };
 };
-export const getCommentsSuccess = data => {
+export const getCommentSuccess = (comment, comments) => {
   return {
     type: actionType.GET_COMMENT_SUCCESS,
-    payload: data
+    payload: { comment: comment, comments: comments }
   };
 };
+
 export const getCommentsFailed = () => {
   return {
     type: actionType.GET_COMMENT_FAILED
@@ -90,13 +92,20 @@ export const getCommentsFailed = () => {
 export const getCommentsClicked = idComments => {
   return async dispatch => {
     await dispatch(actions.showLoading());
-    await dispatch(cleanComments());
     const topTwentyComment = idComments.slice(0, 19);
-    const topTwentyCommentResult = await topTwentyComment.map(async key => {
-      const response = await Api.apiCall(`item/${key}`);
-      await comments.push(response);
-      await dispatch(getCommentsSuccess(comments));
-    });
+    await dispatch(getCommentStart(topTwentyComment));
     await dispatch(actions.hideLoading());
+  };
+};
+
+export const getCommentStart = topTwentyComment => {
+  console.log(topTwentyComment);
+  const comments = [];
+  return async dispatch => {
+    await topTwentyComment.map(async key => {
+      const response = Api.apiCall(`item/${key}`);
+      comments.push(response);
+      await dispatch(getCommentSuccess(response, comments));
+    });
   };
 };

@@ -13,5 +13,6 @@ export {
   getMaxItemStart,
   getCommentsClicked,
   getTopStoriesStart,
-  getStorySuccess
+  getStorySuccess,
+  getStoriesSuccess
 } from "../../containers/storiesConatiner/store/action";

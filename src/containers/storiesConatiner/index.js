@@ -11,7 +11,7 @@ class StoryContainer extends Component {
   state = {
     expanded: false
   };
-  componentDidMount() {
+  componentWillMount() {
     this.props.getMaxItemStart();
   }
 
@@ -23,12 +23,18 @@ class StoryContainer extends Component {
     });
   };
 
+  strip = html => {
+    var tmp = document.implementation.createHTMLDocument("New").body;
+    tmp.innerHTML = html;
+    return tmp.textContent || tmp.innerText || "";
+  };
+
   render() {
     const { stories, comments } = this.props;
+
     return (
       <div className="ticket-container">
-        {this.props.sStories ? (
-          stories &&
+        {stories &&
           stories.map((story, key) => {
             return (
               <Story
@@ -37,12 +43,10 @@ class StoryContainer extends Component {
                 comments={comments}
                 expanded={this.state.expanded}
                 handleExpandClick={this.handleExpandClick}
+                strip={this.strip}
               />
             );
-          })
-        ) : (
-          <div>wait it is loading </div>
-        )}
+          })}
       </div>
     );
   }
@@ -53,6 +57,7 @@ const mapStateToProps = state => {
     loading: state.loading.loading,
     maxItem: state.storyReducer.maxItem,
     topTenStories: state.storyReducer.topTenStories,
+    story: state.storyReducer.story,
     stories: state.storyReducer.stories,
     comments: state.storyReducer.comments
   };
@@ -60,7 +65,6 @@ const mapStateToProps = state => {
 const mapDispatchToProps = dispatch => {
   return {
     getMaxItemStart: () => dispatch(actions.getMaxItemStart()),
-    getStorySuccess: () => dispatch(actions.getStorySuccess()),
     getCommentsClicked: idComments =>
       dispatch(actions.getCommentsClicked(idComments))
   };

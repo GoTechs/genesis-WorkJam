@@ -130,7 +130,7 @@ const story = props => {
                           >
                             {comment.by}
                           </Typography>
-                          {comment.text}
+                          {props.strip(comment.by)}
                         </React.Fragment>
                       }
                     />
