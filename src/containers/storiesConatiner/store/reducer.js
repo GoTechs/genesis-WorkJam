@@ -11,7 +11,7 @@ const intialeState = {
   comments: []
 };
 
-const storiesConatiner = (state = intialeState, action) => {
+const storiesReducer = (state = intialeState, action) => {
   switch (action.type) {
     case actionsType.GET_MAX_ITEM_SUCCESS:
       return updateObject(state, { maxItem: action.payload });
@@ -47,4 +47,4 @@ const storiesConatiner = (state = intialeState, action) => {
   }
 };
 
-export default storiesConatiner;
+export default storiesReducer;
