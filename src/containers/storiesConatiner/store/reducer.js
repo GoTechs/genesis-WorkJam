@@ -7,6 +7,7 @@ const intialeState = {
   loading: false,
   story: [],
   stories: [],
+  comment: [],
   comments: []
 };
 

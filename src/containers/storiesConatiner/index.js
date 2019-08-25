@@ -35,11 +35,10 @@ class StoryContainer extends Component {
     const { stories, comments } = this.props;
     let iteration = 0;
     return (
-      <div className="ticket-container">
+      <div className="stories-container">
         {stories &&
           stories.map((story, key) => {
             iteration++;
-
             return (
               <Story
                 key={key}

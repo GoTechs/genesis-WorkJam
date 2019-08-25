@@ -13,7 +13,7 @@ import IconButton from "@material-ui/core/IconButton";
 import Typography from "@material-ui/core/Typography";
 import { red } from "@material-ui/core/colors";
 import FavoriteIcon from "@material-ui/icons/Favorite";
-import ShareIcon from "@material-ui/icons/Share";
+import MoreHorizIcon from "@material-ui/icons/MoreHoriz";
 import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
 import MoreVertIcon from "@material-ui/icons/MoreVert";
 import Divider from "@material-ui/core/Divider";
@@ -80,13 +80,14 @@ const story = props => {
           <Typography variant="body2" color="textSecondary" component="p">
             {story.title}
           </Typography>
+          <a href={story.url}>About Us </a>
         </CardContent>
         <CardActions disableSpacing>
           <IconButton aria-label="add to favorites">
             <FavoriteIcon />
           </IconButton>
           <IconButton aria-label="share">
-            <ShareIcon />
+            <MoreHorizIcon />
           </IconButton>
           <IconButton
             className={clsx(classes.expand, {
@@ -99,7 +100,11 @@ const story = props => {
             <ExpandMoreIcon />
           </IconButton>
         </CardActions>
-        <Collapse in={expanded} timeout="auto" unmountOnExit>
+        <Collapse
+          in={expanded && props.expandedId === story.id}
+          timeout="auto"
+          unmountOnExit
+        >
           <CardContent>
             <Typography paragraph>Comments</Typography>
             {comments &&
