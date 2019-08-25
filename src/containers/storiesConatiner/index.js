@@ -9,16 +9,18 @@ import "./styles.sass";
 
 class StoryContainer extends Component {
   state = {
-    expanded: false
+    expanded: false,
+    expandedId: ""
   };
   componentWillMount() {
     this.props.getMaxItemStart();
   }
 
-  handleExpandClick = async idComments => {
+  handleExpandClick = async (idComments, id) => {
     await this.props.getCommentsClicked(idComments);
     await this.setState(state => {
       state.expanded = !state.expanded;
+      state.expandedId = id;
       return state;
     });
   };
@@ -31,7 +33,7 @@ class StoryContainer extends Component {
 
   render() {
     const { stories, comments } = this.props;
-
+    console.log(this.state);
     return (
       <div className="ticket-container">
         {stories &&
@@ -39,6 +41,7 @@ class StoryContainer extends Component {
             return (
               <Story
                 key={key}
+                expandedId={this.state.expandedId}
                 story={story}
                 comments={comments}
                 expanded={this.state.expanded}

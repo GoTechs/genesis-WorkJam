@@ -1,15 +1,5 @@
 import React from "react";
-import Button from "../../components/Button";
 import { Trans, withNamespaces } from "react-i18next";
-import { map } from "lodash";
-import { ListGroup } from "react-bootstrap";
-import Delete from "../../assets/images/DeleteBtn.png";
-import Edit from "../../assets/images/EditBtn.png";
-import Wristband from "../../assets/images/bracelet-black.png";
-import Nav from "react-bootstrap/Nav";
-import { Link } from "react-router-dom";
-import Arrow from "../../assets/images/history.png";
-import Icon from "../../components/Icons";
 import { makeStyles } from "@material-ui/core/styles";
 import clsx from "clsx";
 import Card from "@material-ui/core/Card";
@@ -34,6 +24,9 @@ import ListItemAvatar from "@material-ui/core/ListItemAvatar";
 import "./styles.sass";
 
 const story = props => {
+  const randomImage = Math.floor(Math.random() * 11);
+  const imgage = require(`../../assets/images/${randomImage}.png`);
+
   const useStyles = makeStyles(theme => ({
     card: {
       maxWidth: "100%",
@@ -79,7 +72,7 @@ const story = props => {
         />
         <CardMedia
           className={classes.media}
-          image="/static/images/cards/paella.jpg"
+          image={imgage}
           title="Paella dish"
         />
         <CardContent>
@@ -98,8 +91,8 @@ const story = props => {
             className={clsx(classes.expand, {
               [classes.expandOpen]: expanded
             })}
-            onClick={() => handleExpandClick(story.kids)}
-            aria-expanded={expanded}
+            onClick={() => handleExpandClick(story.kids, story.id)}
+            aria-expanded={expanded && props.expandedId === story.id}
             aria-label="show more"
           >
             <ExpandMoreIcon />
@@ -113,10 +106,7 @@ const story = props => {
                 <List className={classes.root} key={key}>
                   <ListItem alignItems="flex-start">
                     <ListItemAvatar>
-                      <Avatar
-                        alt="Remy Sharp"
-                        src="/static/images/avatar/1.jpg"
-                      />
+                      <Avatar alt="Remy Sharp" />
                     </ListItemAvatar>
                     <ListItemText
                       primary="Brunch this weekend?"
