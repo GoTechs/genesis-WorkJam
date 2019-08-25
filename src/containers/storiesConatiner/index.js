@@ -33,7 +33,6 @@ class StoryContainer extends Component {
 
   render() {
     const { stories, comments } = this.props;
-    console.log(this.state);
     return (
       <div className="ticket-container">
         {stories &&
