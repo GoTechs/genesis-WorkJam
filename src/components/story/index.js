@@ -34,7 +34,7 @@ const story = props => {
     },
     media: {
       height: 0,
-      paddingTop: "56.25%" // 16:9
+      paddingTop: "56.25%"
     },
     expand: {
       transform: "rotate(0deg)",
@@ -50,8 +50,9 @@ const story = props => {
       backgroundColor: red[500]
     }
   }));
-  const { story, expanded, handleExpandClick, comments, key } = props;
+  const { story, expanded, handleExpandClick, comments, iteration, j } = props;
   const classes = useStyles();
+  let commentIt = 0;
 
   return (
     <div className="list-container">
@@ -59,7 +60,7 @@ const story = props => {
         <CardHeader
           avatar={
             <Avatar aria-label="recipe" className={classes.avatar}>
-              {key}
+              {iteration}
             </Avatar>
           }
           action={
@@ -102,32 +103,33 @@ const story = props => {
           <CardContent>
             <Typography paragraph>Comments</Typography>
             {comments &&
-              comments.map((comment, key) => (
-                <List className={classes.root} key={key}>
-                  <ListItem alignItems="flex-start">
-                    <ListItemAvatar>
-                      <Avatar alt="Remy Sharp" />
-                    </ListItemAvatar>
-                    <ListItemText
-                      primary="Brunch this weekend?"
-                      secondary={
-                        <React.Fragment>
-                          <Typography
-                            component="span"
-                            variant="body2"
-                            className={classes.inline}
-                            color="textPrimary"
-                          >
-                            {comment.by}
-                          </Typography>
-                          {props.strip(comment.by)}
-                        </React.Fragment>
-                      }
-                    />
-                  </ListItem>
-                  <Divider variant="inset" component="li" />
-                </List>
-              ))}
+              comments.map((comment, key) => {
+                commentIt++;
+                return (
+                  <List className={classes.root} key={key}>
+                    <ListItem alignItems="flex-start">
+                      <ListItemAvatar>
+                        <Avatar alt={j}>{commentIt}</Avatar>
+                      </ListItemAvatar>
+                      <ListItemText
+                        primary={comment.by}
+                        secondary={
+                          <React.Fragment>
+                            <Typography
+                              component="span"
+                              variant="body2"
+                              className={classes.inline}
+                              color="textPrimary"
+                            />
+                            {props.strip(comment.text)}
+                          </React.Fragment>
+                        }
+                      />
+                    </ListItem>
+                    <Divider variant="inset" component="li" />
+                  </List>
+                );
+              })}
           </CardContent>
         </Collapse>
       </Card>

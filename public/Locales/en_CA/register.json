@@ -1,12 +1,4 @@
 {
-    "REGISTER_VALIDATE_EMAIL_WARNING": "your need to validate your profile in your email",
-    "REGISTER_SUCCESS": "you are now regitered",
-    "REGISTER_EMAIL_EXIST": "Email alredy exist",
-    "REGISTER_FAILED": "cant register",
-    "REGISTER_UPDATE_USER_INFO_SUCCESS": "user info updated",
-    "REGISTER_UPDATE_USER_INFO_FAILED": "",
-    "REGISTER_ORDER_UPDATED": "order updated",
-    "REGISTER_UPDATE_ORDER_FAILD": "error update order",
     "REGISTER_PERSONAL_INFO_TITLE": "Personal Space",
     "REGISTER_PERSONAL_INFO_DESCRIPTION": "This page allows you to manage your personal information,including resetting your password.",
     "REGISTER_BTN": "Register"

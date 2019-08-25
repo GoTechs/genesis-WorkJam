@@ -94,18 +94,17 @@ export const getCommentsClicked = idComments => {
     await dispatch(actions.showLoading());
     const topTwentyComment = idComments.slice(0, 19);
     await dispatch(getCommentStart(topTwentyComment));
-    await dispatch(actions.hideLoading());
   };
 };
 
 export const getCommentStart = topTwentyComment => {
-  console.log(topTwentyComment);
   const comments = [];
   return async dispatch => {
     await topTwentyComment.map(async key => {
-      const response = Api.apiCall(`item/${key}`);
+      const response = await Api.apiCall(`item/${key}`);
       comments.push(response);
       await dispatch(getCommentSuccess(response, comments));
+      await dispatch(actions.hideLoading());
     });
   };
 };

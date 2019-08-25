@@ -1,25 +1,4 @@
 {
-  "WRISTBAND_ACTIVATE_YOUR_WRISTBAND": "Activer ton ticket",
-  "WRISTBAND_COMPLETE": "Complete Your Profile",
-  "REMOVE_WRISTBAND_SUCCESS": "removed  Wristband done!",
-  "WRISTBAND_ALREADY_ATTACHED": "wristbanmd already attached",
-  "WRISTBAND_ADDED": "add wristband",
-  "WRISTBAND_ALREDY_ATTACHED": "you wristband already attached",
-  "WRISTBAND_VEERIFY_SUCCESS": "votre wristband est valide ",
-  "wristband": "",
-  "WRISTBAND_LOGIN_LINK": "I already have an account",
-  "WRISTBAND_ADD_WRISTBAND_SUCCESS": "your wristband is added",
-  "WRISTBAND_ADD_WRISTBAND_FAILED": "your wristband not added",
-  "WRISTBAND_UPDATE_USER_INFO_SUCCESS": "update user info success",
-  "WRISTBAND_UPDATE_USER_INFO_FAILED": "update user info failed",
-  "WRISTBAND_LIMIT_ADDED": "your limit is added",
-  "WRISTBAND_CHOOSE_DEFAULT_CARD": "you need to choose a default card first",
-  "WRISTBAND_WRISTBAND_NUMBER": "Wristband Number",
-  "WRISTBAND_VERIFICATION_CODE": "Verification Code",
-  "WRISTBAND_UID_CODE": "UID code: ",
-  "WRISTBAND_STATUS": "Status: ",
-  "WRISTBAND_ADDED_SUCCESS": "add wristband sucess",
-  "WRISTBAND_ADDED_FAILED": "add wristband error",
-  "WRISTBAND_VERIFY_SUCCESS": "your wristband has been validated",
-  "WRISTBAND_VERIFY_FAILD": "add wristband error"
+    "WRISTBAND_LIMIT_ADDED": "your limit is added",
+    "WRISTBAND_CHOOSE_DEFAULT_CARD": "you need to choose a default card first"
 }

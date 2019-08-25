@@ -18,7 +18,7 @@ class StoryContainer extends Component {
 
   handleExpandClick = async (idComments, id) => {
     await this.props.getCommentsClicked(idComments);
-    await this.setState(state => {
+    this.setState(state => {
       state.expanded = !state.expanded;
       state.expandedId = id;
       return state;
@@ -33,10 +33,13 @@ class StoryContainer extends Component {
 
   render() {
     const { stories, comments } = this.props;
+    let iteration = 0;
     return (
       <div className="ticket-container">
         {stories &&
           stories.map((story, key) => {
+            iteration++;
+
             return (
               <Story
                 key={key}
@@ -46,6 +49,7 @@ class StoryContainer extends Component {
                 expanded={this.state.expanded}
                 handleExpandClick={this.handleExpandClick}
                 strip={this.strip}
+                iteration={iteration}
               />
             );
           })}
@@ -61,7 +65,8 @@ const mapStateToProps = state => {
     topTenStories: state.storyReducer.topTenStories,
     story: state.storyReducer.story,
     stories: state.storyReducer.stories,
-    comments: state.storyReducer.comments
+    comments: state.storyReducer.comments,
+    comment: state.storyReducer.comment
   };
 };
 const mapDispatchToProps = dispatch => {

@@ -39,7 +39,6 @@ const storiesConatiner = (state = intialeState, action) => {
     case actionsType.CLEAN_COMMENTS:
       return updateObject(state, { comments: null });
     case actionsType.CLEAN_GET_STORIES_SUCCESSCOMMENTS:
-      console.log(action.payload);
       return updateObject(state, { stories: action.payload });
 
     default:

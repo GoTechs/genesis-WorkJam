@@ -1,9 +1,6 @@
 {
-  "LOGIN_NEDD_VALIDATE_EMAIL": "you need to validate your profile in your email",
-  "LOGIN_NOT_SUCCESS": "error login",
-  "LOGIN_ACTIVATE_WRISTBAND": "Activate your wristband",
-  "LOGIN_FIRST_TIME": "First time here ? SIGN UP",
-  "LOGIN_FORGET_PASSWORD": "Forgot password ?",
-  "LOGIN_BTN": "login",
-  "LOGIN_SUCCESS": "Login success"
+    "LOGIN_ACTIVATE_WRISTBAND": "Activate your wristband",
+    "LOGIN_FIRST_TIME": "First time here ? SIGN UP",
+    "LOGIN_FORGET_PASSWORD": "Forgot password ?",
+    "LOGIN_BTN": "login"
 }
